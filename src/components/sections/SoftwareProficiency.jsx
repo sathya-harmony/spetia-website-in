@@ -41,26 +41,26 @@ const softwareCategories = {
             { name: "Unreal Engine", version: "Real-time 3D", proficiency: "Advanced" }
         ]
     },
-    plant: {
-        name: "Plant Engineering",
+    project: {
+        name: "Project Management",
         tools: [
-            { name: "SmartPlant P&ID", version: "Enterprise", proficiency: "Expert" },
-            { name: "PDMS/E3D", version: "Design", proficiency: "Expert" },
-            { name: "SP3D", version: "SmartPlant 3D", proficiency: "Expert" },
-            { name: "6SigmaDCX", version: "Data Center CFD", proficiency: "Advanced" }
+            { name: "MS Project", version: "Planning & Scheduling", proficiency: "Expert" },
+            { name: "Primavera P6", version: "Project Controls", proficiency: "Expert" },
+            { name: "PlanGrid", version: "Field Management", proficiency: "Advanced" },
+            { name: "Procore", version: "Construction Management", proficiency: "Advanced" }
         ]
     }
 };
 
 const standards = [
-    { name: "AIA", description: "American Institute of Architects" },
-    { name: "ISO 19650", description: "BIM Information Management" },
-    { name: "IBC", description: "International Building Code" },
-    { name: "ASHRAE", description: "HVAC Standards" },
-    { name: "NFPA", description: "Fire Protection Standards" },
-    { name: "NEC", description: "National Electrical Code" },
-    { name: "LEED", description: "Green Building Certification" },
-    { name: "COBie", description: "Facility Management Data" }
+    { name: "IS 456", description: "Concrete Code of Practice" },
+    { name: "NBC 2016", description: "National Building Code" },
+    { name: "IS 1893", description: "Seismic Design Code" },
+    { name: "IGBC", description: "Green Building Certification" },
+    { name: "RERA", description: "Real Estate Regulation" },
+    { name: "BIS", description: "Bureau of Indian Standards" },
+    { name: "IS 875", description: "Design Loads Standard" },
+    { name: "BBMP/BDA", description: "Local Building Authority" }
 ];
 
 const SoftwareProficiency = ({ categories = ['bim', 'cad', 'analysis'], showStandards = true }) => {
@@ -114,8 +114,8 @@ const SoftwareProficiency = ({ categories = ['bim', 'cad', 'analysis'], showStan
                                             <p className="text-[10px] text-white/40 uppercase tracking-wider">{tool.version}</p>
                                         </div>
                                         <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-sm ${tool.proficiency === 'Expert'
-                                                ? 'bg-spetia-orange-500/20 text-spetia-orange-500'
-                                                : 'bg-white/10 text-white/60'
+                                            ? 'bg-spetia-orange-500/20 text-spetia-orange-500'
+                                            : 'bg-white/10 text-white/60'
                                             }`}>
                                             {tool.proficiency}
                                         </span>

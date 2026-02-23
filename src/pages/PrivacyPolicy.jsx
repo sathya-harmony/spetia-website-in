@@ -113,7 +113,7 @@ const PrivacyPolicy = () => {
                                 </h2>
                                 <div className="text-gray-600 leading-relaxed">
                                     <p>
-                                        If you wish to stop any further sms/email alerts/contacts from our side, all you need to do is to send an email at <a href="mailto:info@spetia.com" className="text-spetia-orange-600 hover:underline">info@spetia.com</a> with your mobile numbers and you will be excluded from the alerts list.
+                                        If you wish to stop any further sms/email alerts/contacts from our side, all you need to do is to send an email at <a href="mailto:info@spetia.in" className="text-spetia-orange-600 hover:underline">info@spetia.in</a> with your mobile numbers and you will be excluded from the alerts list.
                                     </p>
                                 </div>
                             </motion.div>

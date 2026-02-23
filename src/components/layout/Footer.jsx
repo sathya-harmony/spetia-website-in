@@ -96,14 +96,14 @@ const Footer = () => {
                                 <h5 className="text-white font-bold text-sm mb-2">India Head Office</h5>
                                 <div className="flex items-start gap-3 text-sm text-white/60">
                                     <AccentIcon variant="location" className="mt-0.5" />
-                                    <span>HSR Layout, Sector 2,<br />Bangalore, KA 560102</span>
+                                    <span>JP Nagar, Greater Bangalore area</span>
                                 </div>
                             </div>
 
                             <div className="pt-8 border-t border-white/5">
-                                <a href="mailto:contact@spetia.com" className="group flex items-center gap-3 text-white hover:text-spetia-orange-500 transition-colors mb-4">
+                                <a href="mailto:contact@spetia.in" className="group flex items-center gap-3 text-white hover:text-spetia-orange-500 transition-colors mb-4">
                                     <AccentIcon variant="email" />
-                                    <span className="font-medium group-hover:translate-x-0.5 transition-transform">contact@spetia.com</span>
+                                    <span className="font-medium group-hover:translate-x-0.5 transition-transform">contact@spetia.in</span>
                                 </a>
                                 <a href="tel:+919611524249" className="group flex items-center gap-3 text-white hover:text-spetia-orange-500 transition-colors">
                                     <AccentIcon variant="phone" />

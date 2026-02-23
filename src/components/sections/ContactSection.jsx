@@ -151,8 +151,8 @@ const ContactSection = () => {
                                 </div>
                                 <span className="text-xs text-white/40 uppercase tracking-widest font-bold">Email Us</span>
                             </div>
-                            <a href="mailto:contact@spetia.com" className="text-xl text-white font-bold tracking-tight group-hover:text-spetia-orange-400 transition-colors flex items-center gap-2">
-                                contact@spetia.com
+                            <a href="mailto:contact@spetia.in" className="text-xl text-white font-bold tracking-tight group-hover:text-spetia-orange-400 transition-colors flex items-center gap-2">
+                                contact@spetia.in
                                 <span className="text-spetia-orange-500 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                             </a>
                         </div>

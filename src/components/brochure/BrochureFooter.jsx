@@ -13,7 +13,7 @@ const BrochureFooter = ({ pageNumber, className = "", textColor = "text-gray-600
 
                 {/* Contact Info */}
                 <div className={`text-[8pt] font-mono uppercase tracking-wider ${textColor} font-medium`}>
-                    www.spetia.com | contact@spetia.com | +1 (212) 803-5398
+                    www.spetia.in | contact@spetia.in | +91 9611524249
                 </div>
 
                 {/* Locations */}

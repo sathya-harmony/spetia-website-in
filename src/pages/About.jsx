@@ -10,7 +10,7 @@ const About = () => {
         <>
             <SEO
                 title="About Us"
-                description="Spetia was founded in 2011 and provides BIM, structural, MEPF, and plant engineering services. 150+ engineers based in Bangalore serving AEC firms globally."
+                description="Spetia was founded in 2011 and delivers premium residential and commercial construction, luxury interiors, and architectural design services across Bangalore and Pan India. 50+ in-house engineers."
             />
             <AboutHero />
             <TeamSection />

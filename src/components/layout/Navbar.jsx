@@ -25,6 +25,7 @@ const Navbar = () => {
     }, [isOpen]);
 
     const navigation = [
+        { name: 'Home', path: '/' },
         {
             name: 'Services',
             path: '/services',
@@ -35,7 +36,7 @@ const Navbar = () => {
             ]
         },
         { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'FAQ', path: '/faq' },
     ];
 
     return (
@@ -55,8 +56,8 @@ const Navbar = () => {
                         <a href="tel:+919611524249" className="hover:text-white transition-colors">
                             +91 9611524249
                         </a>
-                        <a href="mailto:contact@spetia.com" className="hover:text-white transition-colors">
-                            contact@spetia.com
+                        <a href="mailto:contact@spetia.in" className="hover:text-white transition-colors">
+                            contact@spetia.in
                         </a>
                         <span className="text-white/20">|</span>
                         <div className="flex items-center gap-4">

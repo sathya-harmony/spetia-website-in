@@ -37,7 +37,7 @@ const AboutHero = () => {
                         </h1>
 
                         <p className="text-lg md:text-2xl text-white/50 leading-relaxed max-w-2xl mb-12 font-light tracking-wide">
-                            From 3D to 7D BIM, Digital Twins, AR, and VR—we transform how you design, build, and manage complex infrastructure with absolute precision.
+                            From turnkey construction to luxury interiors and architectural design—we transform how you build, with BIM-driven planning and absolute precision.
                         </p>
 
                         <div className="flex flex-wrap justify-center md:justify-start gap-6">

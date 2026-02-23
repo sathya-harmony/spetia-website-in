@@ -96,11 +96,11 @@ const ServicesHero = ({
                     {/* Decorative Data Points */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-white/10 z-20 hidden lg:block">
                         <div className="absolute top-0 left-0 p-4">
-                            <span className="text-white/20 font-mono text-2xl">GLOBAL</span>
+                            <span className="text-white/20 font-mono text-2xl">INDIA</span>
                         </div>
                         <div className="absolute bottom-4 right-4 text-right">
-                            <p className="text-white/40 text-[10px] uppercase font-mono tracking-wider">Global Delivery</p>
-                            <p className="text-spetia-orange-500 text-xl font-bold uppercase tracking-tight">24/7 Support</p>
+                            <p className="text-white/40 text-[10px] uppercase font-mono tracking-wider">Pan India Delivery</p>
+                            <p className="text-spetia-orange-500 text-xl font-bold uppercase tracking-tight">On-Site Teams</p>
                         </div>
                     </div>
                 </motion.div>

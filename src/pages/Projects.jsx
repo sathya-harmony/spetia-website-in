@@ -7,61 +7,61 @@ import AccentIcon from '../components/common/CheckIcon';
 const projects = [
     {
         id: 1,
-        title: "Cleveland Medical Center",
-        category: "Healthcare",
-        location: "Cleveland, OH",
+        title: "Prestige Lakeside Villa",
+        category: "Residential",
+        location: "Bangalore, KA",
         year: "2024",
-        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
-        tags: ["BIM Level 3", "MEPF Design"]
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+        tags: ["Turnkey", "Vastu Compliant"]
     },
     {
         id: 2,
-        title: "Hilton Waterfront Resort",
-        category: "Hospitality",
-        location: "Dubai, UAE",
-        year: "2023",
-        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80",
-        tags: ["Architecture", "Interior"]
+        title: "Oberoi Mall Interiors",
+        category: "Interiors",
+        location: "Bangalore, KA",
+        year: "2024",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
+        tags: ["Luxury", "Custom Joinery"]
     },
     {
         id: 3,
-        title: "Amazon Fulfillment Hub",
+        title: "Brigade Tech Park Office",
         category: "Commercial",
-        location: "Seattle, WA",
+        location: "Whitefield, KA",
         year: "2024",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
-        tags: ["Industrial", "Structural"]
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+        tags: ["BIM Planned", "MEP"]
     },
     {
         id: 4,
-        title: "Stanford Research Lab",
-        category: "Education",
-        location: "Palo Alto, CA",
+        title: "HSR Layout Independent House",
+        category: "Residential",
+        location: "Bangalore, KA",
         year: "2023",
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80",
-        tags: ["Lab Design", "Sustainability"]
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+        tags: ["G+2", "IS Code"]
     },
     {
         id: 5,
-        title: "Palm Jumeirah Villa",
-        category: "Residential",
-        location: "Dubai, UAE",
+        title: "Whitefield Apartment Renovation",
+        category: "Renovation",
+        location: "Bangalore, KA",
         year: "2024",
-        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
-        tags: ["Luxury", "BIM"]
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+        tags: ["Structural", "Interior"]
     },
     {
         id: 6,
-        title: "Tesla Gigafactory Annex",
+        title: "JP Nagar Commercial Complex",
         category: "Commercial",
-        location: "Austin, TX",
+        location: "Bangalore, KA",
         year: "2025",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80",
-        tags: ["Industrial", "BIM 5D"]
+        image: "https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=1200&q=80",
+        tags: ["Turnkey", "BIM 5D"]
     }
 ];
 
-const filters = ["All", "Healthcare", "Hospitality", "Commercial", "Residential", "Education"];
+const filters = ["All", "Residential", "Commercial", "Interiors", "Renovation"];
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState("All");
@@ -74,7 +74,7 @@ const Projects = () => {
         <div className="bg-spetia-dark min-h-screen">
             <SEO
                 title="Projects"
-                description="Explore Spetia's global portfolio of mission-critical projects: healthcare facilities, data centers, industrial plants, commercial spaces, and luxury developments featuring BIM, MEPF design, and structural engineering."
+                description="Explore Spetia's portfolio of premium construction projects across Bangalore and Pan India: residential homes, commercial spaces, luxury interiors, and renovation projects."
             />
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 border-b border-white/5 bg-spetia-dark overflow-hidden">
@@ -86,14 +86,14 @@ const Projects = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-spetia-orange-500 text-xs font-bold tracking-widest uppercase mb-4 block">
-                            Global Portfolio
+                            Our Portfolio
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold uppercase text-white leading-[0.9] tracking-tight mb-8">
                             Selected <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Works.</span>
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl font-light leading-relaxed border-l-2 border-spetia-orange-500/30 pl-6">
-                            A curated selection of our defining projects, demonstrating technical precision and design excellence across the globe.
+                            A curated selection of our defining projects, demonstrating construction excellence and design precision across Bangalore and Pan India.
                         </p>
                     </motion.div>
                 </div>
@@ -201,7 +201,7 @@ const Projects = () => {
                         Have a Challenge? <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Let's solve it.</span>
                     </h2>
                     <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto font-light">
-                        Explore how our engineering solutions can add value to your next major project.
+                        Explore how our construction expertise can bring your next project to life.
                     </p>
                     <Link
                         to="/contact"

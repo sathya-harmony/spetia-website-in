@@ -4,34 +4,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
     {
-        quote: "We needed extra BIM capacity for a hospital deadline. Spetia delivered LOD 400 models in three weeks—our in-house team would have taken six. They understood our Revit standards from day one.",
-        author: "James M.",
-        role: "Principal Architect"
+        quote: "Last year, I had the opportunity to work with Sangeetha on design and execution of our new kitchen premises at Gopasandra. She has done a remarkable job right from understanding our goals, planning and giving us the drawings to effectively executing the same as per our requirements to give us an amazing space to work. I am extremely happy with the care and support that you have provided throughout the complete project.",
+        author: "Sreelakshmi",
+        role: "Owner, Surya Enterprises"
     },
     {
-        quote: "Been working with them for two years on MEPF modeling. They know US codes well and adapt quickly when we change project specs mid-stream. Reliable team.",
-        author: "Anonymous",
-        role: "VDC Manager"
+        quote: "We recently got the elevation and interiors done for our office at Sarjapur through CogentArch. We thank Sangeetha for her attention to detail and professionalism inorder to make our dream space come true. Our team was very happy as they found it very easy to coordinate with her for all our requirements. We found her Very easy to work with, an excellent craftsperson and a good communicator.",
+        author: "Sreelakshmi",
+        role: "Owner, Carnival Cakes & Breads"
     },
     {
-        quote: "The Scan-to-BIM work they did for our renovation project was solid. Point cloud to Revit, minimal back-and-forth. Would use again for similar work.",
-        author: "Robert C.",
-        role: "Project Manager"
+        quote: "Very professional. We really appreciate their patience on any new add-ons and plan customisation at last moment. Very transparent and Excellent workmanship. I like their accurate planning and execution. Overall, we recommend and happy to engage with CogentArch.",
+        author: "Aman & Santhiya",
+        role: "Owner Villa# 72, Pride Vatika Phase 2"
     },
     {
-        quote: "Helped us clear a backlog of structural detailing when we were short-staffed. Three projects running in parallel, all delivered on schedule.",
-        author: "Anonymous",
-        role: "Engineering Director"
+        quote: "We chose CogentArch to build our first house as we got the confidence to go with them after seeing one of their residential projects. Our decision is turning out to be the right one as we have got excellent ideas and support right from planning different layout options, elevation designs, Khata Amalgamation, Plan Sanction to Electricity Supply, etc. Right now, plinth work is going on and we are discussing about next course of action, materials, finishes, etc. and thank the skillful and experienced CogentArch team in building our dream house by the end of the year",
+        author: "Madhumathi and Bhavani Shankar",
+        role: "Villa Owner, 145 & 146, Pride Rolling Hills Phase 2"
     },
     {
-        quote: "Their value engineering review caught some material inefficiencies we missed. Saved us around 12% on steel costs for the data hall project.",
-        author: "David A.",
-        role: "Lead Engineer"
-    },
-    {
-        quote: "The time zone difference actually works in our favor. We hand off work at end of day, get it back by morning. Good for tight deadlines.",
-        author: "Amanda C.",
-        role: "Project Coordinator"
+        quote: "I was looking for a honest, reliable architect/builder who could convert my vision to a dream home, albeit with strict budget requirements. Fortunately, I met Sangeetha and Srikanth from CogentArch, through one of my neighbours. I could sense that the project would be in safe hands from the initial meetings itself. Sangeetha maam has been in this space for nearly 20 years and has a brilliant track record. This rich experience has helped her form a reliable core team. They promised end-to-end delivery of the project, that also includes several approval processes from government agencies, which is a pain to say the least. With the house now set to complete, I have several favorite places within the house. I enjoy watching the play of light falling on my courtyard wall through the circular windows and pergolas. I also love relaxing by the bay window and enjoying the nature outside. These small design elements are what makes a beautiful home, and the full credits go to them. Overall, this eight-month journey with CogentArch has been smooth sailing and they have ensured me a peace of mind throughout. They have taken my design and made it a reality. I would recommend them for your future house construction.",
+        author: "Shankar",
+        role: "Owner Villa# 257, Pride Rolling Hills Phase 2"
     }
 ];
 
@@ -68,7 +63,7 @@ const ClientSays = () => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-600 to-spetia-orange-400">Reliability</span>
                             </h2>
                             <p className="mt-4 text-gray-500 max-w-md mx-auto lg:mx-0 font-medium">
-                                Feedback from AEC firms we've worked with.
+                                Feedback from clients we've built for.
                             </p>
                         </div>
 

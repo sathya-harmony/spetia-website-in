@@ -47,7 +47,7 @@ const TermsOfUse = () => {
                                 className="mb-12"
                             >
                                 <p className="text-gray-600 leading-relaxed">
-                                    These Terms of Use of spetia.com ("Website") are between Spetia ("Spetia") and its users. Please read the Terms of Use and the <Link to="/privacy-policy" className="text-spetia-orange-600 hover:underline">Privacy Policy</Link> of the Website carefully before using this Website or availing any services through the Website. Your use of the Website or the services provided by the Website shall signify your acceptance of the Terms of Use and your agreement to be legally bound by the same.
+                                    These Terms of Use of spetia.in ("Website") are between Spetia ("Spetia") and its users. Please read the Terms of Use and the <Link to="/privacy-policy" className="text-spetia-orange-600 hover:underline">Privacy Policy</Link> of the Website carefully before using this Website or availing any services through the Website. Your use of the Website or the services provided by the Website shall signify your acceptance of the Terms of Use and your agreement to be legally bound by the same.
                                 </p>
                             </motion.div>
 
@@ -166,7 +166,7 @@ const TermsOfUse = () => {
                                 </h2>
                                 <div className="text-gray-600 leading-relaxed space-y-4">
                                     <ul className="list-disc pl-6 space-y-3">
-                                        <li><strong>Notice:</strong> All notices served by Spetia shall be provided via email to your account or as a general notification on the Website. Any notice provided to Spetia pursuant to the Terms of Use should be sent to <a href="mailto:info@spetia.com" className="text-spetia-orange-600 hover:underline">info@spetia.com</a>.</li>
+                                        <li><strong>Notice:</strong> All notices served by Spetia shall be provided via email to your account or as a general notification on the Website. Any notice provided to Spetia pursuant to the Terms of Use should be sent to <a href="mailto:info@spetia.in" className="text-spetia-orange-600 hover:underline">info@spetia.in</a>.</li>
                                         <li><strong>Entire Agreement:</strong> The Terms of Use, along with the Privacy Policy, and any other guidelines made applicable by the Website from time to time, constitute the entire agreement between Spetia and you with respect to your access to or use of the Website and the services thereof.</li>
                                         <li><strong>Relationship:</strong> You acknowledge that your participation in the service does not make you an employee or agency or partnership or joint venture or franchise of Spetia.</li>
                                     </ul>

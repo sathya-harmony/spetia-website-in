@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 const teamAreas = [
     {
         title: "Architecture & Design",
-        description: "Architects who craft distinctive designs using cutting-edge tools and proven methodologies.",
+        description: "Architects who craft distinctive designs using Vastu-compliant layouts and climate-responsive planning.",
         image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80"
     },
     {
-        title: "Building Information Modelling",
-        description: "3D coordination to 7D lifecycle management—precision engineering for projects of any complexity.",
-        image: "https://chapman-taylor.transforms.svdcdn.com/production/uploads/Chapman_Taylor_MediaCityUK-Bupa_Place_BIM-Image.jpg?w=900&h=600&q=90&auto=format&fit=crop&dm=1601988662&s=3e5ea5c7675ba03669d2cea74e881c8e"
+        title: "Construction & Execution",
+        description: "End-to-end turnkey construction from foundation to finishing—IS code compliant with daily quality checks.",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
     },
     {
-        title: "Visualization & Digital Twins",
-        description: "Immersive AR, VR, and Digital Twin experiences that let you walk through spaces before they're built.",
-        image: "https://images.unsplash.com/photo-1626379953822-baec19c3accd?w=800&q=80"
+        title: "Interior Design & Finishing",
+        description: "Premium interior solutions — modular kitchens, custom joinery, and luxury finishes sourced globally.",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
     }
 ];
 
