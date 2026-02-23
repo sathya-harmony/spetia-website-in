@@ -31,7 +31,7 @@ const stats = [
 const AnimatedCounter = ({ value, prefix = "", suffix = "", duration = 2 }) => {
     const [count, setCount] = useState(0);
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
 
     useEffect(() => {
         if (!isInView) return;
@@ -47,6 +47,8 @@ const AnimatedCounter = ({ value, prefix = "", suffix = "", duration = 2 }) => {
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
+            } else {
+                setCount(value);
             }
         };
 
@@ -146,20 +148,20 @@ const StatsSection = () => {
                     className="flex flex-wrap justify-center items-center gap-8 mt-16 pt-12 border-t border-white/10"
                 >
                     <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
-                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">7D</span>
-                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">BIM Specialists</span>
-                    </div>
-                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
-                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">DT</span>
-                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">Digital Twin Ready</span>
-                    </div>
-                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
-                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">AR/VR</span>
-                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">Immersive Tech</span>
-                    </div>
-                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
                         <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">TK</span>
                         <span className="text-xs font-bold uppercase tracking-widest text-white/70">Turnkey Execution</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
+                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">3D</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">BIM Planning</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
+                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">QC</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">Quality Control</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-sm border border-white/10">
+                        <span className="text-2xl font-black text-spetia-orange-500 tracking-tighter">PM</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-white/70">Project Management</span>
                     </div>
                 </motion.div>
             </div>

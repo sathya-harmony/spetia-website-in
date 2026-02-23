@@ -7,7 +7,7 @@ const services = [
     {
         title: "BIM Solutions",
         description: "Zero-clash from LOD 100 to 500.",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&grayscale"
+        image: "https://chapman-taylor.transforms.svdcdn.com/production/uploads/Chapman_Taylor_MediaCityUK-Bupa_Place_BIM-Image.jpg?w=2000&h=1125&q=90&auto=format&fit=crop&dm=1601988662&s=54f73def89a4cc71db18f6d7e1598d08'"
     },
     {
         title: "Architectural Drafting",
@@ -32,7 +32,7 @@ const services = [
     {
         title: "Data Centers",
         description: "Hyperscale Tier Certification.",
-        image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80&grayscale"
+        image: "https://i.pinimg.com/1200x/e9/9e/36/e99e36993eac35f759f9a096b09348df.jpg&grayscale"
     },
     {
         title: "Plant Eng.",

@@ -4,47 +4,47 @@ import CheckIcon from '../common/CheckIcon';
 
 const differentiators = [
     {
-        title: "US Standard Expertise",
-        description: "Deep knowledge of IBC, ASHRAE, NFPA, NEC, and local codes across US, UK, Australia, India, and Middle East markets.",
+        title: "IS & NBC Compliant",
+        description: "Full compliance with IS 456, IS 1893, NBC 2016, and all BBMP/BDA regulations. Every project meets the highest safety and structural standards.",
         stat: "100%",
         statLabel: "Code Compliance"
     },
     {
-        title: "24/7 Follow-the-Sun",
-        description: "Round-the-clock delivery model ensures continuous progress and accelerated project timelines.",
-        stat: "50%",
-        statLabel: "Faster Delivery"
+        title: "End-to-End Execution",
+        description: "From architectural planning to final handover — single point of accountability. No fragmented vendors, no coordination headaches.",
+        stat: "1",
+        statLabel: "Point of Contact"
     },
     {
-        title: "Technology Agnostic",
-        description: "We work in Revit, Bentley, AutoCAD, Navisworks, and adapt to your BIM workflows.",
-        stat: "15+",
-        statLabel: "Platforms"
+        title: "Technology Driven",
+        description: "We leverage BIM, 3D visualization, digital project tracking, and smart procurement to deliver precision-built homes and spaces.",
+        stat: "3D",
+        statLabel: "BIM Modeled"
     },
     {
-        title: "Scalable On-Demand",
-        description: "Rapidly scale your team from 5 to 50+ specialists without hiring overhead or training delays.",
-        stat: "2 Weeks",
-        statLabel: "Ramp-up Time"
+        title: "Transparent Pricing",
+        description: "Detailed BOQ with material specifications upfront. Milestone-based billing with no hidden costs or surprise escalations.",
+        stat: "0",
+        statLabel: "Hidden Charges"
     }
 ];
 
 const benefits = [
     {
-        title: "Enterprise Capabilities",
-        description: "Mid-size firms gain access to the same engineering depth as Fortune 500 companies."
+        title: "Premium Quality",
+        description: "We use only branded materials — UltraTech, JSW, Havells, Jaquar — with strict quality checks at every stage."
     },
     {
-        title: "Cost Reduction",
-        description: "Reduce project engineering costs by 40-60% without compromising quality or timelines."
+        title: "On-Time Delivery",
+        description: "Strict project scheduling with milestone tracking. We commit to timelines and deliver on them."
     },
     {
-        title: "Accelerated Timelines",
-        description: "Compress schedules significantly through parallel workflows and overnight turnaround."
+        title: "Expert Team",
+        description: "In-house architects, structural engineers, MEP specialists, and skilled contractors — no outsourced labor."
     },
     {
-        title: "Domain Specialists",
-        description: "Access sector-specific experts in healthcare, data centers, industrial, and commercial facilities."
+        title: "Pan India Reach",
+        description: "Headquartered in Bangalore with projects delivered across Karnataka, Tamil Nadu, Kerala, and major Indian cities."
     }
 ];
 
@@ -71,7 +71,7 @@ const WhySpetia = () => {
                         Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Spetia</span>
                     </h2>
                     <p className="text-lg text-white/60 max-w-2xl mx-auto font-light">
-                        We're not just another outsourcing firm. We're your strategic engineering partner built for the demands of modern AEC projects.
+                        We're not just another construction company. We're your tech-enabled building partner, delivering precision-built spaces with complete transparency.
                     </p>
                 </motion.div>
 
@@ -110,14 +110,14 @@ const WhySpetia = () => {
                         className="lg:col-span-5"
                     >
                         <span className="text-spetia-orange-500 text-xs font-bold tracking-widest uppercase mb-4 block">
-                            Why Engage
+                            Why Build With Us
                         </span>
                         <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-6">
-                            Your Extended <br />
-                            <span className="text-white/50">Engineering Team</span>
+                            Your Complete <br />
+                            <span className="text-white/50">Building Partner</span>
                         </h3>
                         <p className="text-white/60 leading-relaxed mb-8">
-                            We work as an extension of your team—following your standards, using your templates, and delivering in your workflows. Minimal onboarding required.
+                            From planning approvals to final handover — we manage everything. You get one team, one timeline, and zero coordination hassles.
                         </p>
 
                     </motion.div>

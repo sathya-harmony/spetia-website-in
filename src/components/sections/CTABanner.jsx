@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import AccentIcon from '../common/CheckIcon';
 
 const CTABanner = ({
-    title = "Need a Custom Engineering Solution?",
-    subtitle = "Our team of 150+ specialists delivers end-to-end digital engineering services tailored to your project requirements.",
+    title = "Ready to Build Your Dream?",
+    subtitle = "Our team of 150+ specialists delivers turnkey construction, luxury interiors, and architectural design tailored to your vision.",
     variant = "default" // "default", "industry", "services"
 }) => {
     return (
@@ -84,10 +84,10 @@ const CTABanner = ({
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-spetia-orange-600 text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-spetia-dark transition-all duration-300"
                         >
-                            <span>Talk to an Expert</span>
+                            <span>Start Your Project</span>
                             <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
                         </Link>
                         <Link
@@ -108,19 +108,19 @@ const CTABanner = ({
                     >
                         <div className="flex items-center gap-2 text-white/40 text-sm">
                             <AccentIcon variant="diamond" />
-                            <span>White-Label Delivery</span>
+                            <span>Turnkey Delivery</span>
                         </div>
                         <div className="flex items-center gap-2 text-white/40 text-sm">
                             <AccentIcon variant="diamond" />
-                            <span>NDA Protected</span>
+                            <span>Fixed-Price Contracts</span>
                         </div>
                         <div className="flex items-center gap-2 text-white/40 text-sm">
                             <AccentIcon variant="diamond" />
-                            <span>Scale On Demand</span>
+                            <span>Quality Assured</span>
                         </div>
                         <div className="flex items-center gap-2 text-white/40 text-sm">
                             <AccentIcon variant="diamond" />
-                            <span>Zero Overhead</span>
+                            <span>Pan India</span>
                         </div>
                     </motion.div>
                 </div>

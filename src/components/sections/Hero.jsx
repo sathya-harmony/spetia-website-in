@@ -92,7 +92,7 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row gap-4"
                     >
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-spetia-orange-600 text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-spetia-dark transition-all duration-300"
                         >
                             <span>Start Project</span>

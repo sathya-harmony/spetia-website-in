@@ -120,7 +120,7 @@ const ProjectGrid = () => {
                             residential, and education projects.
                         </p>
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="inline-flex items-center gap-2 text-white font-medium group"
                         >
                             <span>Start a project</span>

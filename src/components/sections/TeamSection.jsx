@@ -10,7 +10,7 @@ const teamAreas = [
     {
         title: "Building Information Modelling",
         description: "3D coordination to 7D lifecycle management—precision engineering for projects of any complexity.",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
+        image: "https://chapman-taylor.transforms.svdcdn.com/production/uploads/Chapman_Taylor_MediaCityUK-Bupa_Place_BIM-Image.jpg?w=900&h=600&q=90&auto=format&fit=crop&dm=1601988662&s=3e5ea5c7675ba03669d2cea74e881c8e"
     },
     {
         title: "Visualization & Digital Twins",

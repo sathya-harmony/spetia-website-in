@@ -65,7 +65,7 @@ const ServicesHero = ({
                         className="flex flex-wrap gap-4"
                     >
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="inline-flex items-center gap-3 px-8 py-4 bg-spetia-orange-600 text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-spetia-dark transition-all duration-300"
                         >
                             <span>Start a project</span>

@@ -35,7 +35,7 @@ const Navbar = () => {
             ]
         },
         { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact/contact-a' },
+        { name: 'Contact', path: '/contact' },
     ];
 
     return (
@@ -137,12 +137,8 @@ const Navbar = () => {
 
                     {/* Right Actions - Typography Only */}
                     <div className="flex items-center gap-4">
-                        <button className="hidden lg:flex items-center justify-center w-10 h-10 text-spetia-dark hover:bg-gray-100 rounded-full transition-colors text-xl font-light">
-                            Q
-                        </button>
-
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="hidden lg:flex items-center gap-2 bg-spetia-orange-600 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-spetia-dark transition-all duration-300 rounded-sm"
                         >
                             <span>Request Proposal</span>
@@ -198,7 +194,7 @@ const Navbar = () => {
                                 </div>
                             ))}
                             <Link
-                                to="/contact/contact-a"
+                                to="/contact"
                                 onClick={() => setIsOpen(false)}
                                 className="mt-4 w-full bg-spetia-orange-600 text-white py-4 flex items-center justify-center gap-2 font-bold uppercase tracking-widest"
                             >

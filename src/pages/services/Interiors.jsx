@@ -65,7 +65,7 @@ const Interiors = () => {
                             </p>
 
                             <Link
-                                to="/contact/contact-a"
+                                to="/contact"
                                 className="inline-flex items-center gap-3 px-8 py-4 bg-spetia-orange-600 text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-spetia-dark transition-all duration-300"
                             >
                                 <span>Book Consultation</span>
@@ -145,7 +145,7 @@ const Interiors = () => {
                             <p className="text-white/60 mb-8 leading-relaxed">
                                 Great design fails without great materials. We provide a transparency certificate for every sheet of ply, every screw, and every litre of paint used in your project.
                             </p>
-                            <Link to="/contact/contact-a" className="text-spetia-orange-500 font-bold uppercase text-sm border-b border-spetia-orange-500 pb-1 hover:text-white hover:border-white transition-colors">
+                            <Link to="/contact" className="text-spetia-orange-500 font-bold uppercase text-sm border-b border-spetia-orange-500 pb-1 hover:text-white hover:border-white transition-colors">
                                 View Material Specs
                             </Link>
                         </div>
@@ -171,7 +171,7 @@ const Interiors = () => {
                         Get 3D realistic renders before a single brick is laid.
                     </p>
                     <Link
-                        to="/contact/contact-a"
+                        to="/contact"
                         className="inline-flex items-center gap-3 bg-spetia-dark text-white px-10 py-4 rounded-sm font-bold uppercase tracking-wider hover:bg-spetia-orange-600 transition-all duration-300"
                     >
                         <span>Start Design Journey</span>

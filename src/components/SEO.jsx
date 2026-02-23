@@ -1,44 +1,61 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
 /**
- * SEO component - sets page title and updates meta description
+ * Enhanced SEO component for spetia.in
+ * - Uses react-helmet-async for proper meta tag management
+ * - Supports robots directives for AI crawlers
+ * - Includes Twitter card and OG enhancements
+ * 
  * @param {string} title - Page title
  * @param {string} description - Page meta description
+ * @param {string} keywords - Optional comma-separated keywords
+ * @param {string} image - Optional OG/Twitter image URL
  */
-const SEO = ({ title, description }) => {
+const SEO = ({
+    title,
+    description,
+    keywords,
+    image = '/images/favicon.png',
+}) => {
     const location = useLocation();
+    const siteUrl = 'https://spetia.in';
+    const fullUrl = `${siteUrl}${location.pathname}`;
+    const fullTitle = title ? `${title} | Spetia` : 'Spetia | Premium Construction & Design Partner — Pan India';
+    const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
-    useEffect(() => {
-        // Update document title
-        document.title = title ? `${title} | Spetia` : 'Spetia | Digital Engineering Services';
+    return (
+        <Helmet>
+            {/* Primary Meta Tags */}
+            <title>{fullTitle}</title>
+            <meta name="title" content={fullTitle} />
+            {description && <meta name="description" content={description} />}
+            {keywords && <meta name="keywords" content={keywords} />}
 
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription && description) {
-            metaDescription.setAttribute('content', description);
-        }
+            {/* Robots - AI-friendly directives */}
+            <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-        // Update OG title
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) {
-            ogTitle.setAttribute('content', title || 'Spetia | Digital Engineering Services');
-        }
+            {/* Open Graph / Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={fullUrl} />
+            <meta property="og:title" content={fullTitle} />
+            {description && <meta property="og:description" content={description} />}
+            <meta property="og:image" content={fullImageUrl} />
+            <meta property="og:site_name" content="Spetia" />
+            <meta property="og:locale" content="en_IN" />
 
-        // Update OG description
-        const ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogDescription && description) {
-            ogDescription.setAttribute('content', description);
-        }
+            {/* Twitter Card */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:url" content={fullUrl} />
+            <meta name="twitter:title" content={fullTitle} />
+            {description && <meta name="twitter:description" content={description} />}
+            <meta name="twitter:image" content={fullImageUrl} />
+            <meta name="twitter:site" content="@spetia" />
 
-        // Update canonical URL
-        let canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-            canonical.setAttribute('href', `https://spetia.com${location.pathname}`);
-        }
-    }, [title, description, location.pathname]);
-
-    return null;
+            {/* Canonical URL */}
+            <link rel="canonical" href={fullUrl} />
+        </Helmet>
+    );
 };
 
 export default SEO;

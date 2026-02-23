@@ -73,7 +73,7 @@ const industries = [
         title: "Education",
         subtitle: "Future Gen",
         description: "Inspiring learning environments for K-12, universities, and training centers.",
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80",
         link: "/industries/education"
     }
 ];

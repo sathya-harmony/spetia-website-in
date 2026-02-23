@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
@@ -10,7 +10,8 @@ import Projects from './pages/Projects';
 import FAQPage from './pages/FAQPage';
 import SmoothScroll, { useLenis } from './components/effects/SmoothScroll';
 import ScrollProgress from './components/effects/ScrollProgress';
-import CustomCursor from './components/effects/CustomCursor';
+import Preloader from './components/common/Preloader';
+import { AnimatePresence } from 'framer-motion';
 
 // Service Pages
 import ArchitecturalDesign from './pages/services/ArchitecturalDesign';
@@ -26,7 +27,6 @@ function ScrollToTop() {
   const lenisContext = useLenis();
 
   useEffect(() => {
-    // Use Lenis scrollTo if available, otherwise fall back to window.scrollTo
     if (lenisContext?.scrollTo) {
       lenisContext.scrollTo(0, { immediate: true });
     } else if (lenisContext?.lenis) {
@@ -39,24 +39,28 @@ function ScrollToTop() {
   return null;
 }
 
-import Brochure from './pages/Brochure';
-import ProposalBuilder from './pages/ProposalBuilder';
-
 function AppContent() {
   const location = useLocation();
-  const isBrochure = location.pathname === '/brochure' || location.pathname === '/proposal';
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader key="preloader" />}
+      </AnimatePresence>
       <ScrollToTop />
-      <div className={`relative flex flex-col min-h-screen font-sans selection:bg-arch-light-brown selection:text-arch-black ${isBrochure ? 'bg-white' : 'bg-arch-gray text-arch-black'}`}>
-        {!isBrochure && <ScrollProgress />}
-        {/* <CustomCursor /> */}
-        {!isBrochure && <Navbar />}
-        <main className={`flex-grow relative ${isBrochure ? 'p-0' : ''}`}>
+      <div className={`relative flex flex-col min-h-screen font-sans selection:bg-arch-light-brown selection:text-arch-black bg-arch-gray text-arch-black`}>
+        <ScrollProgress />
+        <Navbar />
+        <main className="flex-grow relative">
           <Routes>
-            <Route path="/brochure" element={<Brochure />} />
-            <Route path="/proposal" element={<ProposalBuilder />} />
             <Route path="/" element={<Home />} />
             <Route path="/home/home-b" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -65,26 +69,26 @@ function AppContent() {
             <Route path="/services/construction" element={<Construction />} />
             <Route path="/services/interiors" element={<Interiors />} />
             <Route path="/project/projects-a" element={<Projects />} />
-            <Route path="/contact/contact-a" element={<Contact />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQPage />} />
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-use" element={<TermsOfUse />} />
           </Routes>
         </main>
-        {!isBrochure && <Footer />}
-      </div >
+        <Footer />
+      </div>
     </>
   );
 }
 
 function App() {
   return (
-    <SmoothScroll>
-      <Router>
+    <Router>
+      <SmoothScroll>
         <AppContent />
-      </Router>
-    </SmoothScroll>
+      </SmoothScroll>
+    </Router>
   );
 }
 

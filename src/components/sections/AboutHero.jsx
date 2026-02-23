@@ -42,7 +42,7 @@ const AboutHero = () => {
 
                         <div className="flex flex-wrap justify-center md:justify-start gap-6">
                             <a
-                                href="/contact/contact-a"
+                                href="/contact"
                                 className="bg-spetia-orange-600 text-white px-10 py-5 rounded-sm font-bold uppercase tracking-wider hover:bg-white hover:text-spetia-dark transition-all duration-300 flex items-center gap-3 text-sm"
                             >
                                 Get Consultation

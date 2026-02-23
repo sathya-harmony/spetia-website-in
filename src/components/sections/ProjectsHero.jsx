@@ -55,7 +55,7 @@ const ProjectsHero = () => {
                         className="flex flex-wrap justify-center md:justify-start gap-4"
                     >
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="inline-flex items-center gap-2 px-7 py-3.5 bg-brick-600 text-white rounded-full font-medium text-sm transition-all duration-300 hover:bg-brick-700 group"
                         >
                             <span>Discuss your project</span>

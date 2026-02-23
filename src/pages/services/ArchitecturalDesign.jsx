@@ -58,7 +58,7 @@ const ArchitecturalDesign = () => {
                             </p>
 
                             <Link
-                                to="/contact/contact-a"
+                                to="/contact"
                                 className="inline-flex items-center gap-3 px-8 py-4 bg-spetia-orange-600 text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-spetia-dark transition-all duration-300"
                             >
                                 <span>Start Planning</span>
@@ -184,7 +184,7 @@ const ArchitecturalDesign = () => {
                         Speak to our principal architect today.
                     </p>
                     <Link
-                        to="/contact/contact-a"
+                        to="/contact"
                         className="inline-flex items-center gap-3 bg-white text-spetia-dark px-10 py-4 rounded-sm font-bold uppercase tracking-wider hover:bg-spetia-orange-600 hover:text-white transition-all duration-300"
                     >
                         <span>Contact Us</span>

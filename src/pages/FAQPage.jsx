@@ -9,7 +9,7 @@ const FAQPage = () => {
         <div className="bg-spetia-dark min-h-screen">
             <SEO
                 title="FAQ"
-                description="Frequently asked questions about Spetia's digital engineering services, BIM solutions, project process, and what makes us different from other engineering firms."
+                description="Frequently asked questions about construction in Bangalore — approvals, BBMP sanctions, costs per sq ft, RERA compliance, timelines, materials, and Spetia's turnkey construction process."
             />
 
             {/* Hero Section */}
@@ -30,7 +30,7 @@ const FAQPage = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Questions.</span>
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-                            Everything you need to know about our services, process, and capabilities.
+                            Everything you need to know about building with Spetia — approvals, costs, timelines, and quality.
                         </p>
                     </motion.div>
                 </div>
@@ -50,7 +50,7 @@ const FAQPage = () => {
                         Our team is ready to help with any specific questions about your project.
                     </p>
                     <Link
-                        to="/contact/contact-a"
+                        to="/contact"
                         className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-sm font-bold uppercase tracking-wider hover:bg-spetia-orange-500 transition-all duration-300 group"
                     >
                         <span>Contact Us</span>

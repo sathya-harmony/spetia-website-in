@@ -40,7 +40,7 @@ const VideoSection = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                         <Link
-                            to="/contact/contact-a"
+                            to="/contact"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brick-600 text-white rounded-full font-medium text-sm transition-all duration-300 hover:bg-brick-700 hover:scale-[1.02] group w-full sm:w-auto"
                         >
                             <span>Get Consultation</span>
