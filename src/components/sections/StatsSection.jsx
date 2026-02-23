@@ -3,19 +3,19 @@ import { motion, useInView } from 'framer-motion';
 
 const stats = [
     {
-        value: 13,
+        value: 15,
         suffix: "+",
         label: "Years in Business",
         description: "Established 2011"
     },
     {
-        value: 500,
+        value: 150,
         suffix: "+",
         label: "Projects Delivered",
-        description: "Across 9 sectors"
+        description: "Residential & Commercial"
     },
     {
-        value: 150,
+        value: 50,
         suffix: "+",
         label: "Engineers",
         description: "In-House Experts"

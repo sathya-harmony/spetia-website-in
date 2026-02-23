@@ -77,7 +77,7 @@ const ServiceCard = ({ service, index }) => {
     );
 };
 
-const ServicesList = ({ theme = "light", title = "Engineering Excellence", subtitle = "Our Capabilities", description = "Full spectrum digital engineering services for mission-critical infrastructure.", items = servicesData }) => {
+const ServicesList = ({ theme = "light", title = "Construction Excellence", subtitle = "Our Capabilities", description = "Premium construction and design services for residential and commercial spaces.", items = servicesData }) => {
     const isDark = theme === "dark";
 
     return (

@@ -14,6 +14,7 @@
     content="Construction Company Bangalore, Premium House Construction, Luxury Interiors India, Architectural Design Bangalore, Residential Construction, Turnkey Construction, BIM Construction, Building Contractor Bangalore" />
   <meta name="author" content="Spetia" />
   <meta name="theme-color" content="#111111" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -21,7 +22,7 @@
   <meta property="og:title" content="Spetia | Premium Construction & Design Partner — Pan India" />
   <meta property="og:description"
     content="India's premier tech-enabled construction and design firm. Expert residential construction, luxury interiors, and architectural planning across Pan India." />
-  <meta property="og:image" content="/images/favicon.png" />
+  <meta property="og:image" content="https://spetia.in/images/favicon.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -29,25 +30,37 @@
   <meta property="twitter:title" content="Spetia | Premium Construction & Design Partner — Pan India" />
   <meta property="twitter:description"
     content="India's premier tech-enabled construction and design firm. Expert residential construction, luxury interiors, and architectural planning across Pan India." />
+  <meta property="twitter:image" content="https://spetia.in/images/favicon.png" />
+  <meta name="twitter:site" content="@spetia" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/images/favicon.png" />
-  <link rel="apple-touch-icon" href="/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/images/favicon.png?v=2" />
   <link rel="canonical" href="https://spetia.in/" />
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data: Organization -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
+      "@id": "https://spetia.in/#organization",
       "name": "Spetia",
       "legalName": "Spetia OPC Private Ltd.",
       "url": "https://spetia.in",
-      "logo": "https://spetia.in/images/favicon.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://spetia.in/images/favicon.png",
+        "width": 310,
+        "height": 310
+      },
       "image": "https://spetia.in/images/favicon.png",
       "description": "Spetia is India's premier tech-enabled construction and design firm specializing in residential construction, luxury interiors, and architectural planning across Pan India.",
       "slogan": "Build Beyond Intelligence",
       "foundingDate": "2011",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 50
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "HSR Layout, Sector 2",
@@ -82,6 +95,30 @@
         "Premium Home Construction",
         "Commercial Construction"
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Construction & Design Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Construction",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Residential Construction"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Construction"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Renovation & Remodeling"}}
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Design",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Architectural Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Luxury Interior Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D BIM Planning"}}
+            ]
+          }
+        ]
+      },
       "priceRange": "₹₹₹",
       "areaServed": {
         "@type": "Country",
@@ -89,6 +126,55 @@
       }
     }
     </script>
+
+  <!-- JSON-LD: WebSite Schema with SearchAction for Sitelinks -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://spetia.in/#website",
+      "url": "https://spetia.in",
+      "name": "Spetia",
+      "description": "Premium Construction & Design Partner — Pan India",
+      "publisher": {
+        "@id": "https://spetia.in/#organization"
+      },
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://spetia.in/services?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- JSON-LD: Speakable Schema for Voice Search / AIEO Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://spetia.in/#webpage",
+      "url": "https://spetia.in",
+      "name": "Spetia - Premium Construction & Design Partner",
+      "isPartOf": {
+        "@id": "https://spetia.in/#website"
+      },
+      "about": {
+        "@id": "https://spetia.in/#organization"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".hero-description", ".intro-text"]
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://spetia.in/images/favicon.png"
+      }
+    }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

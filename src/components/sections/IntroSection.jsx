@@ -44,16 +44,16 @@ const IntroSection = () => {
 
                         {/* Heading */}
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-spetia-dark mb-6 leading-none">
-                            Your Extended <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-dark to-gray-500">Engineering Team</span>
+                            Your Trusted <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-dark to-gray-500">Construction Partner</span>
                         </h2>
 
                         {/* Description */}
                         <p className="text-lg text-gray-600 mb-6 max-w-xl leading-relaxed font-medium">
-                            We operate as a seamless extension of your workforce, delivering high-quality digital engineering support without the overhead.
+                            From vision to handover, Spetia delivers turnkey construction and design services with unmatched transparency and quality.
                         </p>
 
                         <p className="text-gray-500 mb-10 max-w-xl leading-relaxed text-sm">
-                            With compliance to US & Global standards (AIA, ISO), we support healthcare, hospitality, and data center projects with speed and precision.
+                            Compliant with IS & NBC standards, we build premium residential and commercial spaces across Bangalore and Pan India.
                         </p>
 
                         {/* CTA Buttons */}
@@ -68,7 +68,7 @@ const IntroSection = () => {
                                 to="/about"
                                 className="group inline-flex items-center gap-3 px-8 py-4 bg-spetia-dark text-white rounded-sm font-bold uppercase tracking-wider text-sm hover:bg-spetia-orange-600 transition-all duration-300"
                             >
-                                <span>Learn about our workflow</span>
+                                <span>Learn about our process</span>
                                 <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
                             </Link>
                         </motion.div>
@@ -86,7 +86,7 @@ const IntroSection = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
                         <motion.img
                             src="/images/6883f984d5dc8ecd074dbba5_5-Brown.avif"
-                            alt="Digital engineering workspace"
+                            alt="Premium construction project by Spetia"
                             className="w-full h-full object-cover transition-all duration-700"
                             style={{ y: imageY, scale: imageScale }}
                         />

@@ -5,76 +5,52 @@ import SEO from '../components/SEO';
 
 const industries = [
     {
-        id: "healthcare",
-        title: "Healthcare",
-        subtitle: "Clinical Precision",
-        description: "Advanced MEPF engineering for hospitals, clinics, and medical research facilities.",
-        image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1200&q=80",
-        link: "/industries/healthcare"
-    },
-    {
-        id: "mission-critical",
-        title: "Mission Critical",
-        subtitle: "Data Centers",
-        description: "Hyperscale and edge computing infrastructure with 99.999% uptime reliability.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
-        link: "/services/data-center-engineering"
-    },
-    {
-        id: "industrial",
-        title: "Industrial & Plants",
-        subtitle: "Process Engineering",
-        description: "Manufacturing plants, refineries, and processing facilities designed for peak output.",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80",
-        link: "/services/plant-engineering"
-    },
-    {
-        id: "energy",
-        title: "Energy & Utilities",
-        subtitle: "Power Generation",
-        description: "Sustainable energy infrastructure, from renewables to transmission & distribution.",
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80",
-        link: "/services/plant-engineering"
-    },
-    {
-        id: "construction",
-        title: "Construction",
-        subtitle: "AEC Support",
-        description: "Comprehensive BIM and coordination services for general contractors and builders.",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
-        link: "/services/bim-solutions"
+        id: "residential",
+        title: "Residential",
+        subtitle: "Premium Living",
+        description: "Custom villas, independent houses, and gated community homes built with IS-standard materials and meticulous finish.",
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+        link: "/services/construction"
     },
     {
         id: "commercial",
         title: "Commercial",
-        subtitle: "Scale & Efficiency",
-        description: "Optimized spaces for retail, corporate offices, and mixed-use developments.",
+        subtitle: "Business Spaces",
+        description: "Offices, retail outlets, and mixed-use developments designed for functionality and modern aesthetics.",
         image: "https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=1200&q=80",
-        link: "/industries/commercial"
+        link: "/services/construction"
     },
     {
         id: "hospitality",
         title: "Hospitality",
         subtitle: "Guest Experience",
-        description: "Immersive environments for luxury hotels, resorts, and entertainment venues.",
+        description: "Hotels, resorts, and restaurants built to deliver memorable guest experiences with premium interiors.",
         image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&q=80",
-        link: "/industries/hospitality"
+        link: "/services/interiors"
     },
     {
-        id: "residential",
-        title: "Residential",
-        subtitle: "Modern Habitat",
-        description: "Sustainable connectivity for private homes, townships, and housing estates.",
-        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
-        link: "/industries/residential"
+        id: "interiors",
+        title: "Luxury Interiors",
+        subtitle: "Premium Design",
+        description: "End-to-end interior solutions — modular kitchens, wardrobes, false ceilings, and bespoke joinery with global sourcing.",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
+        link: "/services/interiors"
     },
     {
-        id: "education",
-        title: "Education",
-        subtitle: "Future Gen",
-        description: "Inspiring learning environments for K-12, universities, and training centers.",
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80",
-        link: "/industries/education"
+        id: "renovation",
+        title: "Renovation",
+        subtitle: "Transform & Restore",
+        description: "Complete renovation of existing structures — structural repair, modernization, and interior overhaul.",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+        link: "/services/construction"
+    },
+    {
+        id: "architectural",
+        title: "Architectural Design",
+        subtitle: "Creative Vision",
+        description: "Climate-responsive architecture with Vastu consulting, 3D visualization, and BBMP-ready plan approvals.",
+        image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80",
+        link: "/services/architectural-design"
     }
 ];
 
@@ -82,8 +58,8 @@ const Industries = () => {
     return (
         <div className="bg-spetia-dark min-h-screen">
             <SEO
-                title="Industries"
-                description="Spetia serves healthcare, mission-critical data centers, industrial plants, energy, construction, commercial, hospitality, residential, and education sectors with specialized digital engineering solutions."
+                title="What We Build"
+                description="Spetia constructs premium residential homes, commercial spaces, and luxury interiors across Bangalore and Pan India. Turnkey construction with BIM planning and IS-standard quality."
             />
 
             {/* Hero Section */}
@@ -97,19 +73,19 @@ const Industries = () => {
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <span className="text-spetia-orange-500 text-xs font-bold tracking-widest uppercase">
-                                Sector Expertise
+                                What We Build
                             </span>
                             <div className="h-[1px] w-16 bg-spetia-orange-500/50"></div>
-                            <span className="text-white/40 text-xs font-mono">{industries.length} Verticals</span>
+                            <span className="text-white/40 text-xs font-mono">{industries.length} Segments</span>
                         </div>
 
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase text-white leading-[0.9] tracking-tight mb-6">
-                            Industry <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Verticals.</span>
+                            Building <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-spetia-orange-500 to-spetia-orange-400">Excellence.</span>
                         </h1>
 
                         <p className="text-lg text-white/60 max-w-2xl font-light leading-relaxed">
-                            Engineering solutions calibrated by industry. Deep domain expertise meets global delivery capability across the sectors that define modern infrastructure.
+                            From luxury homes to commercial spaces, we deliver premium construction with turnkey precision across Bangalore and Pan India.
                         </p>
                     </motion.div>
                 </div>
@@ -177,7 +153,7 @@ const Industries = () => {
                 </div>
             </section>
 
-            {/* Universal Standards - Authority Section */}
+            {/* Standards Section */}
             <section className="py-24 bg-black border-t border-white/10 relative overflow-hidden">
                 <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-spetia-orange-500/5 to-transparent pointer-events-none"></div>
                 <div className="container-custom relative z-10">
@@ -187,39 +163,39 @@ const Industries = () => {
                                 The Spetia Standard
                             </span>
                             <h2 className="text-3xl md:text-4xl font-bold uppercase text-white leading-none mb-6">
-                                Engineering <br /> <span className="text-white/50">Without Borders.</span>
+                                Quality <br /> <span className="text-white/50">You Can Trust.</span>
                             </h2>
                             <p className="text-white/60 text-sm leading-relaxed mb-8">
-                                Our industry-agnostic approach is built on a foundation of rigorous quality standards and global compliance.
+                                Every project is built on a foundation of rigorous quality standards, transparent processes, and Indian code compliance.
                             </p>
                             <Link to="/about" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-spetia-orange-500 hover:text-white transition-colors">
-                                <span>View Certifications</span>
+                                <span>Learn More</span>
                                 <span>→</span>
                             </Link>
                         </div>
                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:border-spetia-orange-500/30 transition-colors group">
-                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">Global Compliance</h3>
+                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">IS & NBC Compliance</h3>
                                 <p className="text-white/50 text-sm leading-relaxed">
-                                    Adherence to ISO 9001, IBC, and local building codes across US, UK, Australia, India, and Middle East regions.
+                                    All construction adheres to Indian Standard codes (IS 456, IS 1893) and National Building Code for structural safety and quality.
                                 </p>
                             </div>
                             <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:border-spetia-orange-500/30 transition-colors group">
-                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">Data Security</h3>
+                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">BIM-Driven Planning</h3>
                                 <p className="text-white/50 text-sm leading-relaxed">
-                                    Enterprise-grade IP protection and secure data environments for sensitive government and defense projects.
+                                    3D Building Information Modeling for clash-free design, accurate BOQ, and zero-waste execution on every project.
                                 </p>
                             </div>
                             <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:border-spetia-orange-500/30 transition-colors group">
-                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">Technology Agnostic</h3>
+                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">Quality Control</h3>
                                 <p className="text-white/50 text-sm leading-relaxed">
-                                    We work in Revit, Bentley, AutoCAD, and adapt to your existing BIM workflows.
+                                    Multi-stage quality checks — from material testing to plumb-level precision — with daily progress reporting and photo documentation.
                                 </p>
                             </div>
                             <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:border-spetia-orange-500/30 transition-colors group">
-                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">24/7 Delivery</h3>
+                                <h3 className="text-xl font-bold text-white uppercase mb-3 group-hover:text-spetia-orange-500 transition-colors">Transparent Pricing</h3>
                                 <p className="text-white/50 text-sm leading-relaxed">
-                                    Follow-the-sun delivery model ensuring continuous progress and reduced turnaround times.
+                                    Itemized BOQ with no hidden costs. Real-time budget tracking so you always know where every rupee goes.
                                 </p>
                             </div>
                         </div>
