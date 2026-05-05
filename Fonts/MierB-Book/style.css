@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Mier';
+    src: local('Mier B Book'), local('Mier-B-Book'),
+        url('MierB-Book.woff2') format('woff2'),
+        url('MierB-Book.woff') format('woff'),
+        url('MierB-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
