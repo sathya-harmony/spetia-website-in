@@ -5,6 +5,14 @@ export const contact = {
   city: 'Bangalore, India',
 };
 
+export const site = {
+  name: 'Studio Spetia',
+  url: 'https://spetia.in',
+  serviceName: 'Studio Spetia',
+  description:
+    'Studio Spetia is a Bangalore architect-engineer design and build studio led by Sangeetha and Sathya.',
+};
+
 export function getWhatsappHref(page, projectSlug = null) {
   let message = '';
   if (page === 'home') {
@@ -28,6 +36,19 @@ export const navItems = [
   { label: 'Work', href: '/work' },
   { label: 'Approach', href: '/approach' },
   { label: 'Contact', href: '/contact' },
+];
+
+export const localAreas = [
+  { slug: 'sarjapura', name: 'Sarjapura' },
+  { slug: 'whitefield', name: 'Whitefield' },
+  { slug: 'indiranagar', name: 'Indiranagar' },
+  { slug: 'koramangala', name: 'Koramangala' },
+  { slug: 'jayanagar', name: 'Jayanagar' },
+  { slug: 'yelahanka', name: 'Yelahanka' },
+  { slug: 'hsr-layout', name: 'HSR Layout' },
+  { slug: 'jp-nagar', name: 'JP Nagar' },
+  { slug: 'hebbal', name: 'Hebbal' },
+  { slug: 'devanahalli', name: 'Devanahalli' },
 ];
 
 export const projects = [

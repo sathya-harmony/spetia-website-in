@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 /**
  * Placeholder — visual stand-in for a photograph that has not been shot yet.
  *
@@ -12,21 +14,42 @@
  * what goes where. See design_v2.md §10.4 for the canonical shot list.
  */
 export default function Placeholder({
+  src,
+  alt,
   text,
   filename,
   aspect,
   description,
+  sizes = '100vw',
+  priority = false,
+  objectPosition = 'center',
   className = "aspect-[4/5]",
 }) {
   const [frameLabel, uploadLabel] = aspect
     ? aspect.split('·').map((part) => part.trim())
     : [];
 
+  if (src) {
+    return (
+      <div className={`relative w-full overflow-hidden bg-stone ${className}`}>
+        <Image
+          src={src}
+          alt={alt || description || filename || 'Studio Spetia photograph'}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+          style={{ objectPosition }}
+        />
+      </div>
+    );
+  }
+
   // Backwards-compatible single-text mode
   if (text && !filename) {
     return (
       <div
-        className={`w-full bg-stone flex items-center justify-center p-8 text-center text-ink/70 font-body text-[13px] leading-[1.55] ${className}`}
+        className={`w-full overflow-hidden bg-stone flex items-center justify-center p-8 text-center text-ink/70 font-body text-[13px] leading-[1.55] ${className}`}
         role="img"
         aria-label={`Photograph placeholder: ${text}`}
       >
@@ -38,7 +61,7 @@ export default function Placeholder({
   // Briefed mode — structured call-sheet rendering
   return (
     <div
-      className={`w-full bg-stone flex items-center justify-center p-6 md:p-10 text-ink ${className}`}
+      className={`w-full overflow-hidden bg-stone flex items-center justify-center p-5 md:p-10 text-ink ${className}`}
       role="img"
       aria-label={`Photograph placeholder for ${filename}: ${description}`}
     >

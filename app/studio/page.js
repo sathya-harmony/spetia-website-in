@@ -1,17 +1,21 @@
 import Placeholder from '../components/Placeholder';
 import HeroHeadline from '../components/HeroHeadline';
+import { site } from '../lib/content';
 
 export const metadata = {
-  title: 'The Studio — Studio Spetia, Bangalore',
+  title: 'Sangeetha and Sathya | Studio Spetia Bangalore',
   description:
     'A mother-and-son architect-engineer practice in Bangalore. Twenty years of work. Eighty homes designed. Master builder tradition.',
+  alternates: {
+    canonical: `${site.url}/studio`,
+  },
 };
 
 export default function StudioPage() {
   const personSchemaSangeetha = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://studiospetia.in/#sangeetha',
+    '@id': `${site.url}/#sangeetha`,
     name: 'Sangeetha',
     jobTitle: 'Principal Architect',
     knowsAbout: ['Residential architecture', 'Bangalore architecture', 'Master builder tradition'],
@@ -20,7 +24,7 @@ export default function StudioPage() {
   const personSchemaSathya = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://studiospetia.in/#sathya',
+    '@id': `${site.url}/#sathya`,
     name: 'Sathya',
     jobTitle: 'Engineer and Co-founder',
     alumniOf: {
@@ -41,13 +45,13 @@ export default function StudioPage() {
           `pt-[120px] md:pt-[160px]` keeps the eyebrow below the fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full overflow-hidden bg-ink"
+        className="hero-section relative w-full overflow-hidden bg-ink"
       >
         {/* Photograph slot — replace with <Image src="/photos/studio-hero-onsite.jpg" />.
             §10.4 #2 — Sangeetha and Sathya at a Bangalore site mid-construction.
             Visible scaffolding, slab, masons in background. 16:9 full-bleed. */}
         <div
-          className="absolute inset-0 hero-scrim"
+          className="hero-media hero-scrim"
           aria-hidden="true"
           style={{
             backgroundColor: '#1A1A1A',
@@ -55,13 +59,13 @@ export default function StudioPage() {
               'radial-gradient(ellipse at 30% 20%, rgba(63, 74, 58, 0.25) 0%, transparent 65%)',
           }}
         />
-        <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
+        <div className="hero-brief absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #2</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">studio-hero-onsite.jpg</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 16:9 full-bleed</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 min source</p>
         </div>
-        <div className="relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
+        <div className="hero-content relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
@@ -98,14 +102,14 @@ export default function StudioPage() {
       </section>
 
       {/* The studio's work model */}
-      <section data-header-theme="light" className="section-padded bg-ivory">
+      <section data-header-theme="dark" className="section-padded bg-kaveri text-ivory">
         <div className="container-narrow">
-          <p data-reveal className="eyebrow mb-12">A return to one role</p>
-          <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ink mb-12">
+          <p data-reveal className="eyebrow eyebrow--light mb-12">A return to one role</p>
+          <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ivory mb-12">
             We are not an architecture firm. We are not a construction company.
           </h2>
-          <div data-reveal data-reveal-delay="2" className="w-12 h-px bg-ink mb-16" aria-hidden="true" />
-          <div className="flex flex-col gap-6 type-body" style={{ fontSize: '17px' }}>
+          <div data-reveal data-reveal-delay="2" className="w-12 h-px bg-ivory/40 mb-16" aria-hidden="true" />
+          <div className="flex flex-col gap-6 type-body text-ivory/90" style={{ fontSize: '17px' }}>
             <p>
               There used to be a single role for the person who designed a building and oversaw it being built. The Florentines called it <em>capomastro</em>. The Vijayanagar masters called it <em>sthapati</em>. Brunelleschi solved the dome of Florence Cathedral by inventing the hoist that lifted the bricks. Christopher Wren walked St Paul's site daily for thirty-five years. The drawing and the wall were made by the same hand.
             </p>

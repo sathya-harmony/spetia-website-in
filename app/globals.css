@@ -336,7 +336,7 @@
 
   .end-mark::after {
     content: " ▪";
-    color: var(--spetia-ink);
+    color: currentColor;
     font-size: 0.7em;
     margin-left: 0.4em;
   }
@@ -473,6 +473,49 @@
       rgba(26, 26, 26, 0.70) 100%
     );
     pointer-events: none;
+  }
+
+  /* Mobile hero rhythm. Desktop keeps the current full-bleed editorial
+     overlay. On phones, the photograph/brief area becomes the first panel and
+     the copy becomes a second ink panel, so long headlines and CTAs never sit
+     under the fixed header or get clipped by a short viewport. */
+  .hero-section {
+    isolation: isolate;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+  }
+
+  @media (max-width: 767px) {
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 340px;
+      height: 58svh;
+      inset: auto;
+      flex: 0 0 auto;
+    }
+
+    .hero-content {
+      min-height: auto !important;
+      padding-top: 3.5rem !important;
+      padding-bottom: 5.5rem !important;
+    }
+
+    .hero-content .type-hero {
+      max-width: 13ch;
+    }
+
+    .hero-brief,
+    .hero-section .scroll-indicator {
+      display: none;
+    }
   }
 }
 

@@ -1,17 +1,53 @@
 import CtaPrimary from '../components/CtaPrimary';
 import ContactForm from '../components/ContactForm';
-import { contact } from '../lib/content';
+import { contact, site } from '../lib/content';
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Contact Studio Spetia',
   description:
     'Tell us about your plot. Sangeetha or Sathya replies on WhatsApp within two working days.',
+  alternates: {
+    canonical: `${site.url}/contact`,
+  },
 };
 
 export default function ContactPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How do I contact Studio Spetia?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Send a WhatsApp message through the Studio Spetia website. Sangeetha or Sathya replies personally within two working days.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Studio Spetia work in Bangalore?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Studio Spetia designs and builds homes in Bangalore and nearby plotted neighbourhoods.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Who replies to a Studio Spetia enquiry?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A Studio Spetia enquiry is read by Sangeetha or Sathya. There is no sales team.',
+        },
+      },
+    ],
+  };
+
   return (
-    <section data-header-theme="light" className="bg-stone section-padded pt-40 md:pt-48">
-      <div className="container-narrow flex flex-col items-center">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <section data-header-theme="light" className="bg-stone section-padded pt-40 md:pt-48">
+        <div className="container-narrow flex flex-col items-center">
         <p className="eyebrow mb-8 text-center">Contact</p>
         <h1 className="type-hero text-ink mb-8 text-center max-w-[18ch]">
           Tell us about your plot.
@@ -37,28 +73,53 @@ export default function ContactPage() {
           <ContactForm />
         </div>
 
-        {/* Contact details */}
-        <div className="w-full mt-24">
-          <div className="w-full h-px bg-ink/30 mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <a
-              href={`https://wa.me/${contact.phoneDigits}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-[16px] text-ink hover:text-terracotta transition-colors"
-            >
-              {contact.phoneDisplay}
-            </a>
-            <a
-              href={`mailto:${contact.email}`}
-              className="font-body text-[16px] text-ink hover:text-terracotta transition-colors"
-            >
-              {contact.email}
-            </a>
-            <div className="font-body text-[16px] text-ink">{contact.city}</div>
+          {/* Contact details */}
+          <div className="w-full mt-24">
+            <div className="w-full h-px bg-ink/30 mb-12" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+              <a
+                href={`https://wa.me/${contact.phoneDigits}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-[16px] text-ink hover:text-terracotta transition-colors"
+              >
+                {contact.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${contact.email}`}
+                className="font-body text-[16px] text-ink hover:text-terracotta transition-colors"
+              >
+                {contact.email}
+              </a>
+              <div className="font-body text-[16px] text-ink">{contact.city}</div>
+            </div>
+          </div>
+
+          <div className="w-full mt-24 text-left">
+            <p className="eyebrow mb-8 text-center">Before you message</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="border-t border-ink/25 pt-6">
+                <h2 className="font-body font-medium text-[15px] text-ink mb-3">What should I send?</h2>
+                <p className="font-body text-[15px] leading-[1.65] text-ink/85">
+                  Plot location, approximate size, and when you hope to start. A short note is enough.
+                </p>
+              </div>
+              <div className="border-t border-ink/25 pt-6">
+                <h2 className="font-body font-medium text-[15px] text-ink mb-3">Who replies?</h2>
+                <p className="font-body text-[15px] leading-[1.65] text-ink/85">
+                  Sangeetha or Sathya reads the message. There is no sales team between you and the studio.
+                </p>
+              </div>
+              <div className="border-t border-ink/25 pt-6">
+                <h2 className="font-body font-medium text-[15px] text-ink mb-3">Where do you work?</h2>
+                <p className="font-body text-[15px] leading-[1.65] text-ink/85">
+                  Studio Spetia works on plotted homes in Bangalore and nearby neighbourhoods.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

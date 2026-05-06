@@ -6,6 +6,7 @@ import LoadingScreen from './components/LoadingScreen';
 import SmoothScroll from './components/SmoothScroll';
 import Reveal from './components/Reveal';
 import HeaderTheme from './components/HeaderTheme';
+import { contact, site } from './lib/content';
 
 // GT Sectra Display Light — the locked headline face per design_v2.md §8.2.
 // Self-hosted woff2 from /Fonts/. The Display Light cut is a true display
@@ -33,18 +34,30 @@ const bodyFont = localFont({
   fallback: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
 });
 
-const siteUrl = 'https://studiospetia.in';
+const siteUrl = site.url;
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: 'Studio Spetia',
   title: {
-    default: 'Studio Spetia — Bangalore Architect and Build Studio',
+    default: 'Studio Spetia | Bangalore Architect and Build Studio',
     template: '%s | Studio Spetia',
   },
   description:
     'A Bangalore design and build studio led by Sangeetha (architect, 20 years, 80 homes) and Sathya (engineer, NIT Karnataka). Six homes a year. Atelier, Bespoke, Estate.',
+  keywords: [
+    'Studio Spetia',
+    'Spetia',
+    'Bangalore architect',
+    'Bangalore design and build studio',
+    'home construction Bangalore',
+    'residential architect Bangalore',
+    'BBMP approval architect',
+    'BDA approval architect',
+  ],
+  category: 'Architecture',
   openGraph: {
-    title: 'Studio Spetia — Bangalore Architect and Build Studio',
+    title: 'Studio Spetia | Bangalore Architect and Build Studio',
     description:
       'A Bangalore design and build studio led by Sangeetha (architect, 20 years, 80 homes) and Sathya (engineer, NIT Karnataka).',
     url: siteUrl,
@@ -62,7 +75,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio Spetia — Bangalore Architect and Build Studio',
+    title: 'Studio Spetia | Bangalore Architect and Build Studio',
     description:
       'A Bangalore design and build studio led by Sangeetha (architect, 20 years, 80 homes) and Sathya (engineer, NIT Karnataka).',
     images: ['/images/work-samples/4.jpg'],
@@ -78,11 +91,12 @@ export default function RootLayout({ children }) {
     '@type': 'GeneralContractor',
     '@id': `${siteUrl}/#organization`,
     name: 'Studio Spetia',
-    alternateName: 'Studio SPETIA',
+    alternateName: ['Studio SPETIA', 'Spetia'],
     description: 'Bangalore residential design and build studio led by Architect Sangeetha and Engineer Sathya.',
     url: siteUrl,
     telephone: '+91-96115-24249',
-    email: 'hello@studiospetia.in',
+    email: contact.email,
+    priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Bangalore',
@@ -97,6 +111,30 @@ export default function RootLayout({ children }) {
     areaServed: {
       '@type': 'City',
       name: 'Bangalore',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Studio Spetia residential design and build services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Residential architecture and construction in Bangalore',
+            serviceType: 'Design and build',
+            areaServed: 'Bangalore',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'BBMP and BDA home approval support',
+            serviceType: 'Plan approval coordination',
+            areaServed: 'Bangalore',
+          },
+        },
+      ],
     },
     founder: [
       {

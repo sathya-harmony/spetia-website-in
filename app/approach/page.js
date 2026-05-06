@@ -1,10 +1,14 @@
 import Placeholder from '../components/Placeholder';
 import HeroHeadline from '../components/HeroHeadline';
+import { site } from '../lib/content';
 
 export const metadata = {
-  title: 'How We Work — Studio Spetia Approach',
+  title: 'Design and Build Process in Bangalore',
   description:
     'Five stages from your plot to your keys. Site visit, drawings, BBMP/BDA approval, construction, handover. Eleven to eighteen months.',
+  alternates: {
+    canonical: `${site.url}/approach`,
+  },
 };
 
 export default function ApproachPage() {
@@ -66,10 +70,10 @@ export default function ApproachPage() {
           `pt-[120px] md:pt-[160px]` to clear the fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full overflow-hidden bg-ink"
+        className="hero-section relative w-full overflow-hidden bg-ink"
       >
         <div
-          className="absolute inset-0 hero-scrim"
+          className="hero-media hero-scrim"
           aria-hidden="true"
           style={{
             backgroundColor: '#1A1A1A',
@@ -77,13 +81,13 @@ export default function ApproachPage() {
               'radial-gradient(ellipse at 25% 70%, rgba(154, 74, 46, 0.25) 0%, transparent 65%)',
           }}
         />
-        <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
+        <div className="hero-brief absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #2</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">approach-hero.jpg</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 16:9 full-bleed</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 min source</p>
         </div>
-        <div className="relative z-10 min-h-[80svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
+        <div className="hero-content relative z-10 min-h-[80svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
@@ -330,13 +334,13 @@ export default function ApproachPage() {
       </section>
 
       {/* Material palette */}
-      <section data-header-theme="light" className="section-padded bg-ivory">
+      <section data-header-theme="dark" className="section-padded bg-kaveri text-ivory">
         <div className="container-narrow mb-16">
-          <p data-reveal className="eyebrow mb-8">Materials</p>
-          <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ink mb-12">
+          <p data-reveal className="eyebrow eyebrow--light mb-8">Materials</p>
+          <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ivory mb-12">
             What we build with.
           </h2>
-          <div className="flex flex-col gap-6 type-body" style={{ fontSize: '17px' }}>
+          <div className="flex flex-col gap-6 type-body text-ivory/90" style={{ fontSize: '17px' }}>
              <p>
                Studio Spetia's standard material palette is built on twenty years of Bangalore practice. We work with materials that age well in Bangalore's climate — kota stone for floors that handle the monsoon, seasoned teak for doors and frames that don't warp in humidity, polished cement for surfaces that grow more beautiful with use. We avoid materials that look impressive at handover and look tired in three years.
              </p>
@@ -389,6 +393,44 @@ export default function ApproachPage() {
                 className="h-full"
               />
            </div>
+        </div>
+      </section>
+
+      <section data-header-theme="light" className="section-padded-sm bg-stone">
+        <div className="container-narrow">
+          <p className="eyebrow mb-8">Common questions</p>
+          <h2 className="type-h1 text-ink mb-14 max-w-[18ch]">
+            Straight answers before a site visit.
+          </h2>
+          <div className="flex flex-col border-t border-ink/20">
+            {[
+              {
+                question: 'How long does a Studio Spetia home take?',
+                answer: 'Eleven to eighteen months from agreement to keys, depending on the size and scope of the home.',
+              },
+              {
+                question: 'Who designs the home?',
+                answer: 'Sangeetha designs every Studio Spetia home. She has twenty years of practice in Bangalore and has designed eighty homes.',
+              },
+              {
+                question: 'Do you handle BBMP and BDA approvals?',
+                answer: 'Yes. Studio Spetia files BBMP, BDA, and panchayat approvals depending on the plot classification.',
+              },
+              {
+                question: 'How many homes do you start each year?',
+                answer: 'Studio Spetia starts six homes a year in Bangalore so each project gets direct attention.',
+              },
+            ].map((item) => (
+              <div key={item.question} className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-10 py-8 border-b border-ink/15">
+                <h3 className="font-body font-medium text-[15px] leading-[1.5] text-ink">
+                  {item.question}
+                </h3>
+                <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-ink/85">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -2,7 +2,13 @@ import Link from 'next/link';
 import CtaPrimary from './components/CtaPrimary';
 import Placeholder from './components/Placeholder';
 import HeroHeadline from './components/HeroHeadline';
-import { projects, processStages, tiers } from './lib/content';
+import { projects, processStages, site, tiers } from './lib/content';
+
+export const metadata = {
+  alternates: {
+    canonical: site.url,
+  },
+};
 
 export default function HomePage() {
   const featuredProjects = projects.slice(0, 3);
@@ -17,13 +23,13 @@ export default function HomePage() {
           guarantees the eyebrow always sits below the 118px-tall fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full overflow-hidden bg-ink"
+        className="hero-section relative w-full overflow-hidden bg-ink"
       >
         {/* Photograph slot — replace with <Image src="/photos/home-hero-founders.jpg" />.
             §10.4 ITEM 1: Sangeetha and Sathya in studio at drafting table with
             hand-drawn plan, late afternoon light. 4:5 desktop / 16:9 mobile. */}
         <div
-          className="absolute inset-0 hero-scrim"
+          className="hero-media hero-scrim"
           aria-hidden="true"
           style={{
             backgroundColor: '#1A1A1A',
@@ -31,14 +37,14 @@ export default function HomePage() {
               'radial-gradient(ellipse at 70% 30%, rgba(154, 74, 46, 0.25) 0%, transparent 60%)',
           }}
         />
-        <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
+        <div className="hero-brief absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #1</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">home-hero-founders.jpg</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 4:5 desktop / 16:9 mobile</p>
           <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 + 1440×1800 crops</p>
         </div>
 
-        <div className="relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
+        <div className="hero-content relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
@@ -174,9 +180,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5 — The studio (spec §9.1: ivory, --container-default, two-column,
+      {/* SECTION 5 — The studio (spec §9.1: Kaveri Green, --container-default, two-column,
           B&W mother-son photo + heading + body + accent link to /studio). */}
-      <section data-header-theme="light" className="section-padded bg-ivory">
+      <section data-header-theme="dark" className="section-padded bg-kaveri text-ivory">
         <div className="container-default grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div data-reveal className="img-mask aspect-[4/5] relative w-full order-2 md:order-1">
             <Placeholder
@@ -187,11 +193,11 @@ export default function HomePage() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <p data-reveal className="eyebrow mb-8">The studio</p>
-            <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ink mb-10 max-w-[18ch]">
+            <p data-reveal className="eyebrow eyebrow--light mb-8">The studio</p>
+            <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ivory mb-10 max-w-[18ch]">
               Sangeetha and Sathya.
             </h2>
-            <p data-reveal data-reveal-delay="2" className="type-body text-ink/90 mb-10 max-w-[48ch]" style={{ fontSize: '17px' }}>
+            <p data-reveal data-reveal-delay="2" className="type-body text-ivory/90 mb-10 max-w-[48ch]" style={{ fontSize: '17px' }}>
               A mother-and-son architect-engineer practice. Sangeetha is the principal architect — twenty years of practice, eighty Bangalore homes designed. Sathya is the engineer — NIT Karnataka — and he runs the studio's operations and the build.
             </p>
             <Link href="/studio" className="link-accent" data-reveal data-reveal-delay="3">
@@ -295,9 +301,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8 — Capacity (spec §9.1: ivory, --container-narrow, centered,
+      {/* SECTION 8 — Capacity (spec §9.1: Mysore Stone, --container-narrow, centered,
           eyebrow 2026 SCHEDULE, hero-scale headline, body, primary CTA). */}
-      <section data-header-theme="light" className="section-padded bg-ivory">
+      <section data-header-theme="light" className="section-padded bg-stone">
         <div className="container-narrow text-center flex flex-col items-center">
           <p data-reveal className="eyebrow mb-12">2026 schedule</p>
           <h2 data-reveal data-reveal-delay="1" className="type-hero text-ink mb-10 max-w-[16ch]">

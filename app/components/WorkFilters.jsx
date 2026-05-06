@@ -91,7 +91,7 @@ export default function WorkFilters({ projects }) {
         )}
 
         {filtered.map((project, idx) => (
-          <article id={project.slug} key={project.slug} className="scroll-mt-[140px]">
+          <article id={project.slug} key={project.slug} className="scroll-mt-[140px] bg-stone pb-24">
             <div className="w-full h-[60vh] md:h-[80vh] relative mb-16">
               {project.imageHero ? (
                 <Image

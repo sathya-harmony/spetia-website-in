@@ -1,3 +1,5 @@
+import { site } from './lib/content';
+
 export default function robots() {
   return {
     rules: {
@@ -5,6 +7,6 @@ export default function robots() {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://studiospetia.in/sitemap.xml',
+    sitemap: `${site.url}/sitemap.xml`,
   };
 }
