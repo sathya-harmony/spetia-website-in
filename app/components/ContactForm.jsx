@@ -50,7 +50,7 @@ export default function ContactForm() {
       } else {
         setStatus('success');
       }
-    } catch (err) {
+    } catch {
       setStatus('error');
       setErrorMsg('Network error. Please try again or use WhatsApp.');
     }

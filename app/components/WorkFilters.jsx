@@ -36,7 +36,7 @@ export default function WorkFilters({ projects }) {
 
   return (
     <>
-      <div className="max-w-[1080px] mx-auto px-4 mt-16 flex flex-col items-center gap-4 font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet">
+      <div className="container-default mt-8 flex flex-col items-center gap-4 font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet">
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           {TIERS.map((t) => {
             const active = tier === t;
@@ -74,10 +74,10 @@ export default function WorkFilters({ projects }) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-32 pb-32 mt-24">
+      <div className="flex flex-col gap-32 mt-24">
         {filtered.length === 0 && (
-          <div className="max-w-[720px] mx-auto px-4 py-32 text-center">
-            <p className="font-display text-[clamp(1.5rem,3vw,2rem)] text-ink-soft">
+          <div className="container-narrow py-24 text-center">
+            <p className="type-h2 text-ink-soft">
               No projects match this filter yet.
             </p>
             <button
@@ -104,36 +104,38 @@ export default function WorkFilters({ projects }) {
                 />
               ) : (
                 <Placeholder
-                  text={`Hero photograph for ${project.name}: finished home, golden hour exterior, atmospheric. Signature shot.`}
+                  filename={`project-${project.slug}-hero.jpg`}
+                  aspect="16:10 · 2880×1800"
+                  description={`§10.4 #7 — ${project.name} (${project.tier}). Finished home, golden hour exterior, atmospheric, no people. Signature shot.`}
                   className="h-full"
                 />
               )}
             </div>
 
-            <div className="max-w-[1080px] mx-auto px-4 md:px-16 mb-12">
+            <div className="container-default mb-12">
               {project.tags?.includes('landscape') && (
                 <span className="tag-landscape mb-4">Landscape</span>
               )}
-              <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-4">
+              <h2 className="type-h1 text-ink mb-4">
                 {project.name}
               </h2>
-              <p className="font-body text-[14px] text-ink-quiet uppercase tracking-[0.05em]">
+              <p className="type-caption">
                 {project.location} · {project.sqft} · {project.year} · {project.tier} · {project.duration}.
               </p>
             </div>
 
-            <div className="max-w-[720px] mx-auto px-4 mb-24">
-              <p className="font-body text-[16px] leading-[1.65] text-ink-soft mb-8">
+            <div className="container-narrow mb-24">
+              <p className="type-body mb-8" style={{ fontSize: '17px' }}>
                 {project.description}
               </p>
               {project.quote && (
-                <p className="font-display italic text-[clamp(1.125rem,2.5vw,1.25rem)] text-ink-soft/80 pl-6 border-l border-terracotta">
+                <p className="font-display-italic text-[clamp(1.125rem,2vw,1.25rem)] leading-[1.5] text-ink-soft/85 pl-6 border-l border-terracotta">
                   {project.quote}
                 </p>
               )}
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               <div className="aspect-[3/2] relative bg-stone/20 w-full">
                 {project.imageDetail ? (
                   <Image
@@ -144,7 +146,12 @@ export default function WorkFilters({ projects }) {
                     sizes="(min-width: 768px) 50vw, 100vw"
                   />
                 ) : (
-                  <Placeholder text="Interior detail shot, 3:2" className="h-full" />
+                  <Placeholder
+                    filename={`project-${project.slug}-detail.jpg`}
+                    aspect="3:2 · 1600×1067"
+                    description={`§10.4 #8 — ${project.name}. Interior detail (door pull, joinery moment, stone joint, brass strip in concrete). Macro-ish.`}
+                    className="h-full"
+                  />
                 )}
               </div>
               <div className="aspect-[16/9] relative bg-stone/20 w-full mt-0 md:mt-32">
@@ -157,7 +164,12 @@ export default function WorkFilters({ projects }) {
                     sizes="(min-width: 768px) 50vw, 100vw"
                   />
                 ) : (
-                  <Placeholder text="Full interior at golden hour, 16:9" className="h-full" />
+                  <Placeholder
+                    filename={`project-${project.slug}-interior.jpg`}
+                    aspect="16:9 · 2880×1620"
+                    description={`§10.4 #9 — ${project.name}. Full interior at golden hour, no people, kota stone or teak frame visible.`}
+                    className="h-full"
+                  />
                 )}
               </div>
             </div>

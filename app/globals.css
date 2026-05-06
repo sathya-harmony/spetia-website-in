@@ -22,6 +22,12 @@
     --ink-quiet: #6B6B6B;
     --hairline: rgba(26, 26, 26, 0.4);
 
+    /* Header foreground — switched at runtime by HeaderTheme component
+       between dark (#1A1A1A) and light (#F1ECE2) depending on what's
+       currently behind the fixed header. */
+    --header-fg: #1A1A1A;
+    --header-border: rgba(26, 26, 26, 0.12);
+
     --type-hero: clamp(2.5rem, 8vw, 4.5rem);
     --type-h1: clamp(2rem, 5vw, 3rem);
     --type-h2: clamp(1.5rem, 3.5vw, 2rem);
@@ -86,38 +92,37 @@
     font-family: var(--font-body), system-ui, sans-serif;
   }
 
-  /* Fraunces — variable serif. Uses opsz (optical size) axis: 9-144 maps to
-     small body to large display. Heavier strokes auto-applied at smaller sizes,
-     finer hairlines at large sizes. SOFT axis 0-100 controls cusp softness. */
+  /* GT Sectra Display Light — one weight (300), one style. We never
+     synthesize bold/italic; if a heavier register is needed, scale the
+     rendering size rather than the weight. The negative letter-spacing
+     and the geometricPrecision rendering hint are critical for keeping
+     the hairlines clean at large sizes. */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), Georgia, "Times New Roman", serif;
-    font-weight: 350;
+    font-weight: 300;
     line-height: var(--lh-heading);
     margin: 0;
-    letter-spacing: -0.014em;
+    letter-spacing: -0.012em;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-synthesis: none;
     text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Display-scale headlines (hero) — full optical-display, slightly
-     softened cusps for the editorial register. */
   h1 {
-    font-variation-settings: "opsz" 144, "SOFT" 70;
-    font-weight: 350;
-    paint-order: stroke fill;
+    letter-spacing: -0.018em;
+    line-height: 1.05;
   }
 
-  /* Section heads — middle optical zone keeps strokes solid. */
   h2 {
-    font-variation-settings: "opsz" 96, "SOFT" 50;
-    font-weight: 380;
-    paint-order: stroke fill;
+    letter-spacing: -0.014em;
+    line-height: 1.1;
   }
 
   h3 {
-    font-variation-settings: "opsz" 48, "SOFT" 30;
-    font-weight: 400;
+    letter-spacing: -0.008em;
+    line-height: 1.18;
   }
 
   p { margin: 0; }
@@ -136,17 +141,157 @@
 @layer components {
   .font-display {
     font-family: var(--font-display), Georgia, "Times New Roman", serif;
-    font-weight: 380;
+    font-weight: 300;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
-    font-variation-settings: "opsz" 96, "SOFT" 50;
+    font-synthesis: none;
     text-rendering: geometricPrecision;
-    letter-spacing: -0.014em;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* No real italic cut for GT Sectra Display Light — italic accent
+     pieces are intentionally kept very rare on this site (hairline links
+     and the closing tagline only). When used, we swap to the body face's
+     italic so we never synthesize a faux italic. */
+  .font-display-italic {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-style: italic;
+    font-weight: 400;
   }
 
   .font-body {
     font-family: var(--font-body), system-ui, sans-serif;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
+
+  /* ============================================================
+     Canonical type scale — Use these everywhere, not bespoke clamps.
+     Matches design_v2.md §8.2 type tokens.
+     ============================================================ */
+
+  /* Hero — full-bleed page-opening headline */
+  .type-hero {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+  }
+
+  /* H1 — section opener within a page */
+  .type-h1 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.014em;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+  }
+
+  /* H2 — sub-section heading, tier name, stage title */
+  .type-h2 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+  }
+
+  /* H3 — small inline heading, project card title, etc. */
+  .type-h3 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+    line-height: 1.25;
+    letter-spacing: -0.006em;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+  }
+
+  /* Eyebrow — Mier B Book, 13px, all caps, tracked +0.12em, ink-quiet (spec §8.2) */
+  .eyebrow {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-quiet);
+    font-weight: 400;
+  }
+  .eyebrow--light {
+    color: rgba(241, 236, 226, 0.6);
+  }
+
+  /* Lede — large body intro paragraph under H1/Hero */
+  .type-lede {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* Body — default body copy, max ~65 chars per line (spec §8.2) */
+  .type-body {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+
+  /* Caption — small meta line under cards (location · sqft · year · tier) */
+  .type-caption {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: var(--ink-quiet);
+  }
+
+  /* Italic terracotta accent link with arrow ("View all work →") — spec §9.1 */
+  .link-accent {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--hampi-terracotta);
+    transition: opacity 200ms ease;
+  }
+  .link-accent:hover { opacity: 0.7; }
+
+}
+
+/* Container widths — kept outside @layer so they always win over Tailwind
+   layout utilities. These are the only canonical horizontal containers
+   used in prose / sectioned content. */
+.container-narrow,
+.container-default,
+.container-wide {
+  width: 100%;
+  margin-inline: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container-narrow,
+  .container-default,
+  .container-wide {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+.container-narrow  { max-width: var(--container-narrow); }
+.container-default { max-width: var(--container-default); }
+.container-wide    { max-width: var(--container-wide); }
+
+/* Re-open the components layer so the rest of the file's @layer
+   components rules below still register correctly. */
+@layer components {
+  /* (closed/reopened to lift container classes outside the layer) */
 
   .hairline-short {
     width: 48px;
@@ -223,30 +368,108 @@
     transform: scale(1);
   }
 
-  .scroll-line {
+  .scroll-indicator {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     z-index: 10;
-  }
-
-  .scroll-line-text {
-    font-family: var(--font-body), system-ui, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
     color: inherit;
   }
 
-  .scroll-line-bar {
+  .scroll-indicator__label {
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.85;
+  }
+
+  .scroll-indicator__line {
     width: 1px;
-    height: 32px;
-    background: rgba(154, 74, 46, 0.7);
+    height: 48px;
+    background: currentColor;
+    opacity: 0.6;
+    animation: scroll-line-pulse 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: top;
+  }
+
+  @keyframes scroll-line-pulse {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    40%  { transform: scaleY(1); transform-origin: top; opacity: 0.7; }
+    60%  { transform: scaleY(1); transform-origin: bottom; opacity: 0.7; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* Hero word-by-word reveal (Omai pattern) */
+  .hero-title {
+    visibility: visible;
+  }
+  .hero-title__word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.5em);
+    animation: hero-word-reveal 1100ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--word-index, 0) * 110ms + 200ms);
+    will-change: opacity, transform;
+  }
+  @keyframes hero-word-reveal {
+    from { opacity: 0; transform: translateY(0.5em); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Omai-style underline CTA — text + animated bottom border */
+  .link-underline {
+    display: inline-block;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+    padding-bottom: 8px;
+    transition: color 240ms ease, border-color 240ms ease;
+  }
+  .link-underline:hover {
+    color: var(--hampi-terracotta);
+    border-bottom-color: var(--hampi-terracotta);
+  }
+  .link-underline--light {
+    color: rgba(241, 236, 226, 0.85);
+    border-bottom-color: rgba(241, 236, 226, 0.35);
+  }
+  .link-underline--light:hover {
+    color: var(--mysore-ivory);
+    border-bottom-color: var(--mysore-ivory);
+  }
+
+  /* Section vertical rhythm — Omai spacing, ~120/180/240 px */
+  .section-padded {
+    padding-block: clamp(7.5rem, 12vw, 15rem);
+  }
+  .section-padded-sm {
+    padding-block: clamp(5rem, 8vw, 9rem);
+  }
+
+  /* Image scrim for hero text overlay */
+  .hero-scrim::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 26, 26, 0.30) 0%,
+      rgba(26, 26, 26, 0.10) 30%,
+      rgba(26, 26, 26, 0.10) 50%,
+      rgba(26, 26, 26, 0.55) 100%
+    );
+    pointer-events: none;
   }
 }
 

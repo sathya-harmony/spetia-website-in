@@ -20,6 +20,11 @@ export default function CtaPrimary({
       color: '#1A1A1A',
       borderColor: '#F1ECE2',
     },
+    ivory: {
+      backgroundColor: '#F1ECE2',
+      color: '#1A1A1A',
+      borderColor: '#F1ECE2',
+    },
     outline: {
       backgroundColor: 'transparent',
       color: '#1A1A1A',

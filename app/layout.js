@@ -1,4 +1,3 @@
-import { Fraunces } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from './components/Header';
@@ -6,16 +5,20 @@ import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import SmoothScroll from './components/SmoothScroll';
 import Reveal from './components/Reveal';
+import HeaderTheme from './components/HeaderTheme';
 
-// Fraunces — variable optical-sizing serif. Solves the spindly-Sectra-at-mid-sizes
-// problem by auto-thickening strokes at smaller render sizes. Free, Google Fonts.
-// Weight is "variable" so we can drive it via font-variation-settings (opsz/SOFT)
-// in CSS without locking individual instances.
-const displayFont = Fraunces({
-  subsets: ['latin'],
+// GT Sectra Display Light — the locked headline face per design_v2.md §8.2.
+// Self-hosted woff2 from /Fonts/. The Display Light cut is a true display
+// face: hairlines render thin, terminals are wedge-shaped, and the optical
+// sizing assumes very-large rendering. To avoid the "spindly / jagged"
+// effect Sangeetha noticed earlier, we (a) only use it at hero/h1/h2 sizes,
+// (b) disable faux-light synthesis, (c) force optimizeLegibility +
+// geometricPrecision rendering, (d) preload it so it lands before paint.
+const displayFont = localFont({
+  src: './fonts/GT-Sectra-Display-Light.woff2',
   variable: '--font-display',
-  axes: ['SOFT', 'opsz'],
-  style: ['normal', 'italic'],
+  weight: '300',
+  style: 'normal',
   display: 'swap',
   preload: true,
   fallback: ['Georgia', 'Times New Roman', 'serif'],
@@ -136,6 +139,7 @@ export default function RootLayout({ children }) {
         <LoadingScreen />
         <SmoothScroll />
         <Reveal />
+        <HeaderTheme />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-ink focus:text-ivory focus:px-4 focus:py-2 focus:font-body focus:text-[12px] focus:tracking-[0.12em] focus:uppercase focus:rounded-sm"
@@ -144,7 +148,7 @@ export default function RootLayout({ children }) {
         </a>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main id="main-content" className="flex-grow pt-[64px] md:pt-[124px]">{children}</main>
+          <main id="main-content" className="flex-grow">{children}</main>
           <Footer />
         </div>
       </body>

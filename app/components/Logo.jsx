@@ -1,5 +1,10 @@
 export default function Logo({ className = "", color = "ink", size = 120 }) {
-  const fill = color === "ivory" ? "#F1ECE2" : "#1A1A1A";
+  const fill =
+    color === "ivory"
+      ? "#F1ECE2"
+      : color === "currentColor"
+      ? "currentColor"
+      : "#1A1A1A";
 
   return (
     <svg

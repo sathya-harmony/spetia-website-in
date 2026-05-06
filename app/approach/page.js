@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import CtaPrimary from '../components/CtaPrimary';
 import Placeholder from '../components/Placeholder';
-import { processStages, tiers } from '../lib/content';
+import HeroHeadline from '../components/HeroHeadline';
 
 export const metadata = {
   title: 'How We Work — Studio Spetia Approach',
@@ -63,26 +61,54 @@ export default function ApproachPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <section className="py-24 bg-ivory">
-        <div className="max-w-[720px] mx-auto px-4 text-center">
-          <h1 className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-ink mb-6">
+      {/* Editorial hero */}
+      <section
+        data-header-theme="dark"
+        className="relative w-full h-[80svh] min-h-[520px] overflow-hidden bg-ink"
+      >
+        <div
+          className="absolute inset-0 hero-scrim"
+          aria-hidden="true"
+          style={{
+            backgroundColor: '#1A1A1A',
+            backgroundImage:
+              'radial-gradient(ellipse at 25% 70%, rgba(154, 74, 46, 0.12) 0%, transparent 60%)',
+          }}
+        />
+        <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
+          <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #2</p>
+          <p className="font-display text-[14px] md:text-[15px] text-ivory/80">approach-hero.jpg</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">16:9 · 2880×1620</p>
+        </div>
+        <div className="relative z-10 h-full container-wide flex flex-col justify-end pb-24 md:pb-32">
+          <p
+            className="eyebrow eyebrow--light mb-8"
+            style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
+          >
             How we work
-          </h1>
-          <p className="font-body text-[clamp(1rem,2vw,1.125rem)] text-ink-soft max-w-[480px] mx-auto">
-            Five stages. Eleven to eighteen months. The architect walks every site at every stage.
+          </p>
+          <HeroHeadline
+            text="Five stages. Eleven to eighteen months."
+            className="type-hero text-ivory mb-8 max-w-[20ch]"
+          />
+          <p
+            className="type-lede text-ivory/85 max-w-[44ch]"
+            style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 1100ms both' }}
+          >
+            The architect walks every site at every stage. The build is run by the studio's engineer.
           </p>
         </div>
       </section>
 
       {/* The 5 Stages */}
-      <section className="bg-ivory pb-32">
-        <div className="max-w-[720px] mx-auto px-4 flex flex-col gap-32">
+      <section data-header-theme="light" className="section-padded bg-ivory">
+        <div className="container-narrow flex flex-col gap-32">
           
           {/* Stage 1 */}
           <div>
-             <div className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-terracotta mb-2">01</div>
-             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-8">Site.</h2>
-             <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft mb-12">
+             <div className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] text-terracotta mb-3">01</div>
+             <h2 className="type-h1 text-ink mb-8">Site.</h2>
+             <div className="flex flex-col gap-6 type-body mb-12" style={{ fontSize: '17px' }}>
                <p>
                  It starts on WhatsApp. You send your plot details — location, dimensions, an approximate budget, when you're hoping to start. Sangeetha or Sathya replies within twenty-four hours. There is no sales team. The first conversation is with the architect or the engineer who will work on your home.
                </p>
@@ -91,15 +117,20 @@ export default function ApproachPage() {
                </p>
              </div>
              <div className="aspect-[4/5] w-full relative bg-stone/20">
-               <Placeholder text="Sangeetha on a Bangalore plot with a measuring tape or notebook. Trees visible. Late afternoon. 4:5." className="h-full" />
+               <Placeholder
+                 filename="approach-stage-01-site.jpg"
+                 aspect="4:5 · 1440×1800"
+                 description="§10.4 #10 — Sangeetha on a Bangalore plot with measuring tape or notebook. Trees visible. Late afternoon."
+                 className="h-full"
+               />
              </div>
           </div>
 
           {/* Stage 2 */}
           <div>
-             <div className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-terracotta mb-2">02</div>
-             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-8">Drawing.</h2>
-             <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft mb-12">
+             <div className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] text-terracotta mb-3">02</div>
+             <h2 className="type-h1 text-ink mb-8">Drawing.</h2>
+             <div className="flex flex-col gap-6 type-body mb-12" style={{ fontSize: '17px' }}>
                <p>
                  If we agree to work together, we sign a small concept-design contract — typically three to six weeks of design exploration. During this phase, Sangeetha sketches by hand. We meet two or three times.
                </p>
@@ -108,15 +139,20 @@ export default function ApproachPage() {
                </p>
              </div>
              <div className="aspect-[4/5] w-full relative bg-stone/20">
-               <Placeholder text="Sangeetha's hand on tracing paper, mid-stroke with a pencil. Architectural elevation visible. Tight crop. 4:5." className="h-full" />
+               <Placeholder
+                 filename="approach-stage-02-drawing.jpg"
+                 aspect="4:5 · 1440×1800"
+                 description="§10.4 #11 — Sangeetha's hand on tracing paper, mid-stroke. Architectural elevation visible. Tight crop."
+                 className="h-full"
+               />
              </div>
           </div>
 
           {/* Stage 3 */}
           <div>
-             <div className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-terracotta mb-2">03</div>
-             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-8">Approval.</h2>
-             <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft mb-12">
+             <div className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] text-terracotta mb-3">03</div>
+             <h2 className="type-h1 text-ink mb-8">Approval.</h2>
+             <div className="flex flex-col gap-6 type-body mb-12" style={{ fontSize: '17px' }}>
                <p>
                  Bangalore plot approvals depend on your Khata. A-Khata under BBMP. Panchayat plots under the local authority. BDA layouts under BDA. We tell you which one applies on day one, and we file the drawings with the right office. You do not chase the approval consultant — we do.
                </p>
@@ -133,9 +169,9 @@ export default function ApproachPage() {
 
           {/* Stage 4 */}
           <div>
-             <div className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-terracotta mb-2">04</div>
-             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-8">Build.</h2>
-             <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft mb-12">
+             <div className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] text-terracotta mb-3">04</div>
+             <h2 className="type-h1 text-ink mb-8">Build.</h2>
+             <div className="flex flex-col gap-6 type-body mb-12" style={{ fontSize: '17px' }}>
                <p>
                  Construction takes nine to fifteen months depending on the size of the home. Sangeetha walks the site every two weeks. Sathya is on site every working day, supervising the build. The site engineer reports to him.
                </p>
@@ -144,15 +180,20 @@ export default function ApproachPage() {
                </p>
              </div>
              <div className="aspect-[16/9] w-full relative bg-stone/20">
-               <Placeholder text="Mid-construction Bangalore site. Slab pour or column-marking. Mid-morning. Workers visible. Documentary, not heroic. 16:9." className="h-full" />
+               <Placeholder
+                 filename="approach-stage-04-build.jpg"
+                 aspect="16:9 · 2880×1620"
+                 description="§10.4 #12 — Mid-construction Bangalore site. Slab pour or column-marking. Documentary, not heroic."
+                 className="h-full"
+               />
              </div>
           </div>
 
           {/* Stage 5 */}
           <div>
-             <div className="font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.05] text-terracotta mb-2">05</div>
-             <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-8">Handover and after.</h2>
-             <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft mb-12">
+             <div className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] text-terracotta mb-3">05</div>
+             <h2 className="type-h1 text-ink mb-8">Handover and after.</h2>
+             <div className="flex flex-col gap-6 type-body mb-12" style={{ fontSize: '17px' }}>
                <p>
                  When the home is ready, we walk through it together. We hand over keys and a folder containing every drawing, every approval, every warranty card, every vendor contact.
                </p>
@@ -161,34 +202,39 @@ export default function ApproachPage() {
                </p>
              </div>
              <div className="aspect-[4/5] w-full relative bg-stone/20">
-               <Placeholder text="Detail shot, teak door, brass key in hand. Intimate. 4:5." className="h-full" />
+               <Placeholder
+                 filename="approach-stage-05-handover.jpg"
+                 aspect="4:5 · 1440×1800"
+                 description="§10.4 #13 — Detail shot, teak door, brass key in hand. Intimate."
+                 className="h-full"
+               />
              </div>
           </div>
         </div>
       </section>
 
       {/* The three tiers full scope */}
-      <section id="tiers" className="py-32 bg-stone/20">
-        <div className="max-w-[720px] mx-auto px-4 mb-24">
-          <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-6">
-            The three tiers
+      <section id="tiers" data-header-theme="light" className="section-padded bg-stone">
+        <div className="container-narrow mb-24">
+          <h2 data-reveal className="type-h1 text-ink mb-5">
+            The three tiers.
           </h2>
-          <p className="font-body text-[clamp(1rem,2vw,1.125rem)] text-ink-soft">
+          <p data-reveal data-reveal-delay="1" className="type-lede">
             Studio Spetia takes commissions at three scopes. Each tier is a different kind of project, not a different quality of attention.
           </p>
         </div>
 
-        <div className="max-w-[1080px] mx-auto px-4 md:px-16 flex flex-col gap-32">
+        <div className="container-default flex flex-col gap-32">
           {/* Atelier */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
              <div>
-                <p className="font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet mb-6">TIER ONE</p>
-                <h3 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink">Atelier</h3>
-                <div className="w-8 h-px bg-terracotta my-6" />
-                <p className="font-display text-[clamp(1.125rem,2.5vw,1.25rem)] text-ink mb-6">
+                <p className="eyebrow mb-6">Tier one</p>
+                <h3 className="type-h1 text-ink">Atelier</h3>
+                <div className="hairline-terracotta" />
+                <p className="font-display text-[clamp(1.125rem,2vw,1.375rem)] leading-[1.4] text-ink mb-6">
                   Single-family Bangalore homes, 2,400 to 4,000 sqft, eleven to fourteen months.
                 </p>
-                <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft">
+                <div className="flex flex-col gap-6 type-body" style={{ fontSize: '16px' }}>
                   <p>
                     The Atelier tier is the studio's foundational scope. Architecture, structure, interiors, and construction under one Studio Spetia contract. Designed by Sangeetha. Built under her direct site supervision and Sathya's daily oversight.
                   </p>
@@ -204,20 +250,25 @@ export default function ApproachPage() {
                 </div>
              </div>
              <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
-               <Placeholder text="Finished Atelier-scale home. 16:9 or 4:5." className="h-full" />
+               <Placeholder
+                 filename="tier-atelier-hero.jpg"
+                 aspect="16:9 · 2880×1620"
+                 description="§10.4 #18 — Atelier-scale home, single-storey, garden visible."
+                 className="h-full"
+               />
              </div>
           </div>
 
           {/* Bespoke */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
              <div>
-                <p className="font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet mb-6">TIER TWO</p>
-                <h3 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink">Bespoke</h3>
-                <div className="w-8 h-px bg-terracotta my-6" />
-                <p className="font-display text-[clamp(1.125rem,2.5vw,1.25rem)] text-ink mb-6">
+                <p className="eyebrow mb-6">Tier two</p>
+                <h3 className="type-h1 text-ink">Bespoke</h3>
+                <div className="hairline-terracotta" />
+                <p className="font-display text-[clamp(1.125rem,2vw,1.375rem)] leading-[1.4] text-ink mb-6">
                   Larger homes, 4,000 to 6,500 sqft, custom millwork, full landscape, named-architect involvement on every detail.
                 </p>
-                <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft">
+                <div className="flex flex-col gap-6 type-body" style={{ fontSize: '16px' }}>
                   <p>
                     The Bespoke tier is for projects that need more from the studio. 4,000 to 6,500 sqft homes, typically on larger plots in Whitefield, Sarjapur, Yelahanka, or the city's outer fringes. Sangeetha is named on the contract as the design lead — every detail comes through her.
                   </p>
@@ -230,7 +281,12 @@ export default function ApproachPage() {
                 </div>
              </div>
              <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
-               <Placeholder text="Finished Bespoke-scale home with visible custom millwork or landscape. 16:9 or 4:5." className="h-full" />
+               <Placeholder
+                 filename="tier-bespoke-hero.jpg"
+                 aspect="16:9 · 2880×1620"
+                 description="§10.4 #19 — Bespoke-scale home, double-height living, custom joinery."
+                 className="h-full"
+               />
              </div>
           </div>
 
@@ -238,15 +294,15 @@ export default function ApproachPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
              <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <p className="font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet">TIER THREE</p>
+                  <p className="eyebrow">Tier three</p>
                   <span className="tag-landscape">Landscape</span>
                 </div>
-                <h3 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink">Estate</h3>
+                <h3 className="type-h1 text-ink">Estate</h3>
                 <div className="hairline-kaveri" />
-                <p className="font-display text-[clamp(1.125rem,2.5vw,1.25rem)] text-ink mb-6">
+                <p className="font-display text-[clamp(1.125rem,2vw,1.375rem)] leading-[1.4] text-ink mb-6">
                   Full custom villa, 6,500+ sqft, photography rights, post-occupancy snagging through Year One.
                 </p>
-                <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft">
+                <div className="flex flex-col gap-6 type-body" style={{ fontSize: '16px' }}>
                   <p>
                     The Estate tier is the studio's full-scope offering. 6,500 sqft and above, on plots that allow architectural ambition — half-acre Yelahanka sites, two-acre weekend homes outside the city, the rare Indiranagar bungalow plot. Sangeetha leads from concept through handover; the project becomes the studio's primary commitment for its duration.
                   </p>
@@ -259,19 +315,25 @@ export default function ApproachPage() {
                 </div>
              </div>
              <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
-               <Placeholder text="Finished Estate-scale villa with full landscape. 16:9 or 4:5." className="h-full" />
+               <Placeholder
+                 filename="tier-estate-hero.jpg"
+                 aspect="16:9 · 2880×1620"
+                 description="§10.4 #20 — Estate-scale villa exterior at dusk with landscape."
+                 className="h-full"
+               />
              </div>
           </div>
         </div>
       </section>
 
       {/* Material palette */}
-      <section className="py-32 bg-ivory">
-        <div className="max-w-[720px] mx-auto px-4 mb-16">
-          <h2 className="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.15] text-ink mb-12">
-            What we build with
+      <section data-header-theme="light" className="section-padded bg-ivory">
+        <div className="container-narrow mb-16">
+          <p data-reveal className="eyebrow mb-8">Materials</p>
+          <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ink mb-12">
+            What we build with.
           </h2>
-          <div className="flex flex-col gap-6 font-body text-[16px] leading-[1.65] text-ink-soft">
+          <div className="flex flex-col gap-6 type-body" style={{ fontSize: '17px' }}>
              <p>
                Studio Spetia's standard material palette is built on twenty years of Bangalore practice. We work with materials that age well in Bangalore's climate — kota stone for floors that handle the monsoon, seasoned teak for doors and frames that don't warp in humidity, polished cement for surfaces that grow more beautiful with use. We avoid materials that look impressive at handover and look tired in three years.
              </p>
@@ -288,28 +350,43 @@ export default function ApproachPage() {
         </div>
 
         {/* 4-up grid for materials */}
-        <div className="max-w-[1080px] mx-auto px-4 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="container-default grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
            <div className="aspect-square relative bg-stone/20">
-              <Placeholder text="Close-up polished kota stone floor. 1:1." className="h-full text-xs" />
+              <Placeholder
+                filename="material-kota-stone.jpg"
+                aspect="1:1 · 1200×1200"
+                description="§10.4 #14 — Close-up polished kota stone floor."
+                className="h-full"
+              />
            </div>
            <div className="aspect-square relative bg-stone/20">
-              <Placeholder text="Teak door with brass pull. 1:1." className="h-full text-xs" />
+              <Placeholder
+                filename="material-teak-door.jpg"
+                aspect="1:1 · 1200×1200"
+                description="§10.4 #15 — Teak door with brass pull."
+                className="h-full"
+              />
            </div>
            <div className="aspect-square relative bg-stone/20">
-              <Placeholder text="Polished concrete with brass divider. 1:1." className="h-full text-xs" />
+              <Placeholder
+                filename="material-polished-concrete.jpg"
+                aspect="1:1 · 1200×1200"
+                description="§10.4 #16 — Polished concrete with brass divider strip."
+                className="h-full"
+              />
            </div>
            <div className="aspect-square relative bg-stone/20">
-              <Placeholder text="Terracotta jaali with light through. 1:1." className="h-full text-xs" />
+              <Placeholder
+                filename="material-jaali.jpg"
+                aspect="1:1 · 1200×1200"
+                description="§10.4 #17 — Terracotta jaali with light through."
+                className="h-full"
+              />
            </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-stone/20">
-        <div className="max-w-[720px] mx-auto px-4 text-center">
-          <CtaPrimary page="approach" />
-        </div>
-      </section>
+      {/* No per-page bottom CTA — the global Footer kicker carries the conversion. */}
     </>
   );
 }

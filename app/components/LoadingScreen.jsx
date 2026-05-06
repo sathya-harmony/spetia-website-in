@@ -30,7 +30,11 @@ export default function LoadingScreen() {
       setPhase('done');
       document.documentElement.classList.remove('is-loading');
       document.documentElement.classList.add('content-ready');
-      try { sessionStorage.setItem('spetia-loaded', '1'); } catch {}
+      try {
+        sessionStorage.setItem('spetia-loaded', '1');
+      } catch {
+        // Some privacy modes block sessionStorage; the splash can still finish.
+      }
     }, 1700);
 
     return () => {
