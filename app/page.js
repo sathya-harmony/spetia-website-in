@@ -9,10 +9,15 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — design_v2.md §9.1 Section 2 — founder-centric editorial */}
+      {/* HERO — design_v2.md §9.1 Section 2 — founder-centric editorial.
+          Section has no fixed height; the inner wrapper carries `min-h-[100svh]`
+          so the hero is at least viewport-tall on normal screens but grows when
+          the CTA stack (eyebrow + headline + lede + hairline + CtaPrimary +
+          caption) exceeds the viewport. `pt-[120px] md:pt-[160px]` on the inner
+          guarantees the eyebrow always sits below the 118px-tall fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full h-[100svh] min-h-[600px] overflow-hidden bg-ink"
+        className="relative w-full overflow-hidden bg-ink"
       >
         {/* Photograph slot — replace with <Image src="/photos/home-hero-founders.jpg" />.
             §10.4 ITEM 1: Sangeetha and Sathya in studio at drafting table with
@@ -23,16 +28,17 @@ export default function HomePage() {
           style={{
             backgroundColor: '#1A1A1A',
             backgroundImage:
-              'radial-gradient(ellipse at 70% 30%, rgba(154, 74, 46, 0.12) 0%, transparent 55%)',
+              'radial-gradient(ellipse at 70% 30%, rgba(154, 74, 46, 0.25) 0%, transparent 60%)',
           }}
         />
         <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #1</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">home-hero-founders.jpg</p>
-          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">4:5 desktop · 16:9 mobile</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 4:5 desktop / 16:9 mobile</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 + 1440×1800 crops</p>
         </div>
 
-        <div className="relative z-10 h-full container-wide flex flex-col justify-end pb-32 md:pb-40">
+        <div className="relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
@@ -49,6 +55,23 @@ export default function HomePage() {
           >
             Studio Spetia is led by Sangeetha, a Bangalore architect of twenty years, and her son Sathya, an engineer trained at NIT Karnataka.
           </p>
+
+          {/* Hero CTA — design_v2.md §9.1 Section 2.
+              Sub-headline → 32px gap → 32px terracotta hairline → 24px gap → CTA → caption. */}
+          <div
+            className="mt-8"
+            style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 1500ms both' }}
+          >
+            <div
+              className="w-8 h-px mb-6"
+              aria-hidden="true"
+              style={{ backgroundColor: 'var(--hampi-terracotta)' }}
+            />
+            <CtaPrimary page="home" variant="dark" />
+            <p className="font-body text-[13px] leading-[1.5] text-ivory/75 mt-4">
+              Sangeetha and Sathya reply personally. Within twenty-four hours.
+            </p>
+          </div>
         </div>
 
         <div className="scroll-indicator text-ivory">
@@ -75,19 +98,19 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div data-reveal className="border-t border-ink/25 pt-6">
               <h3 className="font-body font-medium text-[15px] text-ink mb-3">Architecture-led.</h3>
-              <p className="font-body text-[15px] leading-[1.65] text-ink-soft">
+              <p className="font-body text-[15px] leading-[1.65] text-ink/90">
                 Every home is designed by Sangeetha. No templates. No shared elevations.
               </p>
             </div>
             <div data-reveal data-reveal-delay="1" className="border-t border-ink/25 pt-6">
               <h3 className="font-body font-medium text-[15px] text-ink mb-3">One contract.</h3>
-              <p className="font-body text-[15px] leading-[1.65] text-ink-soft">
+              <p className="font-body text-[15px] leading-[1.65] text-ink/90">
                 Design, structure, interiors, and construction under one studio. One number to call.
               </p>
             </div>
             <div data-reveal data-reveal-delay="2" className="border-t border-ink/25 pt-6">
               <h3 className="font-body font-medium text-[15px] text-ink mb-3">Six a year.</h3>
-              <p className="font-body text-[15px] leading-[1.65] text-ink-soft">
+              <p className="font-body text-[15px] leading-[1.65] text-ink/90">
                 We start six homes a year. Each one gets the studio's full attention from first sketch to handover.
               </p>
             </div>
@@ -168,7 +191,7 @@ export default function HomePage() {
             <h2 data-reveal data-reveal-delay="1" className="type-h1 text-ink mb-10 max-w-[18ch]">
               Sangeetha and Sathya.
             </h2>
-            <p data-reveal data-reveal-delay="2" className="type-body text-ink-soft mb-10 max-w-[48ch]" style={{ fontSize: '17px' }}>
+            <p data-reveal data-reveal-delay="2" className="type-body text-ink/90 mb-10 max-w-[48ch]" style={{ fontSize: '17px' }}>
               A mother-and-son architect-engineer practice. Sangeetha is the principal architect — twenty years of practice, eighty Bangalore homes designed. Sathya is the engineer — NIT Karnataka — and he runs the studio's operations and the build.
             </p>
             <Link href="/studio" className="link-accent" data-reveal data-reveal-delay="3">
@@ -257,7 +280,7 @@ export default function HomePage() {
               <div data-reveal data-reveal-delay={String(idx)} key={tier.name}>
                 <h3 className="type-h2 text-ink mb-5">{tier.name}</h3>
                 <div className={tier.name === 'Estate' ? 'hairline-kaveri' : 'hairline-terracotta'} />
-                <p className="font-body text-[15px] md:text-[16px] leading-[1.7] text-ink-soft">
+                <p className="font-body text-[15px] md:text-[16px] leading-[1.7] text-ink/90">
                   {tier.scope}
                 </p>
               </div>
@@ -281,7 +304,7 @@ export default function HomePage() {
             Three slots open for 2026 starts.
           </h2>
           <div data-reveal data-reveal-delay="2" className="hairline-terracotta mx-auto mb-10" aria-hidden="true" />
-          <p data-reveal data-reveal-delay="3" className="type-body text-ink-soft mb-12 max-w-[480px]" style={{ fontSize: '17px' }}>
+          <p data-reveal data-reveal-delay="3" className="type-body text-ink/90 mb-12 max-w-[480px]" style={{ fontSize: '17px' }}>
             We start six homes a year in Bangalore. As of May 2026, three slots remain for projects starting this year.
           </p>
           <div data-reveal data-reveal-delay="4">

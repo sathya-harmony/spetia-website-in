@@ -36,7 +36,7 @@ export default function WorkFilters({ projects }) {
 
   return (
     <>
-      <div className="container-default mt-8 flex flex-col items-center gap-4 font-body text-[13px] uppercase tracking-[0.12em] text-ink-quiet">
+      <div className="container-default mt-8 flex flex-col items-center gap-4 font-body text-[13px] uppercase tracking-[0.12em] text-ink/70">
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           {TIERS.map((t) => {
             const active = tier === t;
@@ -69,7 +69,7 @@ export default function WorkFilters({ projects }) {
             );
           })}
         </div>
-        <p className="font-body text-[12px] tracking-[0.08em] text-ink-quiet/80 normal-case mt-3">
+        <p className="font-body text-[12px] tracking-[0.08em] text-ink/60 normal-case mt-3">
           {filtered.length} of {projects.length} projects
         </p>
       </div>
@@ -77,7 +77,7 @@ export default function WorkFilters({ projects }) {
       <div className="flex flex-col gap-32 mt-24">
         {filtered.length === 0 && (
           <div className="container-narrow py-24 text-center">
-            <p className="type-h2 text-ink-soft">
+            <p className="type-h2 text-ink/80">
               No projects match this filter yet.
             </p>
             <button
@@ -129,7 +129,7 @@ export default function WorkFilters({ projects }) {
                 {project.description}
               </p>
               {project.quote && (
-                <p className="font-display-italic text-[clamp(1.125rem,2vw,1.25rem)] leading-[1.5] text-ink-soft/85 pl-6 border-l border-terracotta">
+                <p className="font-display-italic text-[clamp(1.125rem,2vw,1.25rem)] leading-[1.5] text-ink/90 pl-6 border-l border-terracotta">
                   {project.quote}
                 </p>
               )}

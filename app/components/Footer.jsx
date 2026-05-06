@@ -1,21 +1,18 @@
 import Link from 'next/link';
 import Logo from './Logo';
 import { contact, getWhatsappHref } from '../lib/content';
-import NewsletterForm from './NewsletterForm';
 
 /**
- * Footer — Omai pattern.
+ * Footer — Omai close, doctrine-correct.
  *
- * One continuous section, sitting on a single full-bleed photograph
- * (slot — see §10.4 #20). The section contains, top to bottom:
- *   1. KICKER — two columns separated by a vertical hairline:
- *        a) "Begin a Studio Spetia commission." + MESSAGE STUDIO SPETIA CTA
- *        b) "Stay close to the studio."        + email signup
- *   2. INFO — three columns: Studio · Reach us · Read (per design_v2.md §9.1)
- *   3. BOTTOM STRIP — © + trademark notice (per design_v2.md §9.1)
+ * design_v2.md §3.1 forbids newsletter signup. design_v2.md §4.1 says the
+ * single sticky CTA is the header MESSAGE STUDIO SPETIA. The footer kicker
+ * therefore carries one centered closing CTA — no second column, no email
+ * signup, no booking widget. Subtraction is the design (§0).
  *
- * The same Footer is rendered on every page via the root layout, so the
- * close of every funnel is identical — Omai's defining trick.
+ *   1. KICKER     — single centered headline + CTA + reply caption
+ *   2. INFO       — three columns: Studio · Reach us · Read (per §9.1)
+ *   3. BOTTOM     — © + trademark notice (per §9.1)
  */
 export default function Footer() {
   return (
@@ -32,40 +29,32 @@ export default function Footer() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/footer-texture.png')" }}
       />
-      {/* Hairline veil: keeps ivory type readable if the PNG has lighter patches */}
+      {/* Hairline veil: keeps ivory type readable if the PNG has lighter patches. Added subtle terracotta glow for vibrancy. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-ink/10 via-transparent to-ink/25 pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-ink/10 via-terracotta/10 to-ink/30 pointer-events-none"
       />
 
       {/* ============================== */}
-      {/* KICKER — dual CTAs (Omai pattern) */}
+      {/* KICKER — single centered closing CTA (Omai close, no newsletter) */}
       {/* ============================== */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-24 md:pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-16 md:divide-x md:divide-ivory/15 items-center text-center">
-          {/* Left half — Begin a commission */}
-          <div className="flex flex-col items-center md:px-12">
-            <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.15] tracking-[-0.012em] text-ivory mb-10 max-w-[18ch]">
-              Begin a Studio Spetia commission.
-            </h2>
-            <a
-              href={getWhatsappHref('home')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-ivory text-ink hover:bg-terracotta hover:text-ivory transition-colors duration-300 px-10 py-4 font-body text-[12px] md:text-[13px] uppercase tracking-[0.16em]"
-            >
-              <span>Message Studio Spetia</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          {/* Right half — Stay close (newsletter) */}
-          <div className="flex flex-col items-center md:px-12">
-            <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.15] tracking-[-0.012em] text-ivory mb-10 max-w-[18ch]">
-              Stay close to the studio.
-            </h2>
-            <NewsletterForm />
-          </div>
+        <div className="flex flex-col items-center text-center">
+          <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.012em] text-ivory mb-10 max-w-[20ch]">
+            Begin a Studio Spetia commission.
+          </h2>
+          <a
+            href={getWhatsappHref('home')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-terracotta text-ivory hover:bg-ivory hover:text-ink transition-colors duration-300 px-10 py-4 font-body text-[12px] md:text-[13px] uppercase tracking-[0.16em] font-medium"
+          >
+            <span>Message Studio Spetia</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <p className="font-body text-[13px] leading-[1.5] text-ivory/70 mt-6 max-w-[44ch]">
+            Sangeetha and Sathya reply personally. Within twenty-four hours.
+          </p>
         </div>
       </div>
 
@@ -81,44 +70,47 @@ export default function Footer() {
               <Link href="/" className="hover:opacity-80 transition-opacity inline-flex" aria-label="Studio Spetia — home">
                 <Logo color="ivory" size={120} />
               </Link>
-              <p className="font-body text-[14px] md:text-[15px] leading-[1.65] text-ivory/70 max-w-[280px] mx-auto">
+              <p className="font-body text-[14px] md:text-[15px] leading-[1.65] text-ivory/90 max-w-[280px] mx-auto">
                 Bangalore. An architect-engineer led design and build studio.
+              </p>
+              <p className="font-body text-[12px] leading-[1.6] text-ivory/55 max-w-[280px] mx-auto">
+                Sangeetha is registered with the Council of Architecture, India.
               </p>
             </div>
 
             {/* Column 2 — Reach us */}
             <div className="flex flex-col gap-3 items-center">
-              <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/50 mb-2">
+              <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/70 mb-2">
                 Reach us
               </p>
               <a
                 href={`https://wa.me/${contact.phoneDigits}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors"
+                className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors"
               >
                 WhatsApp {contact.phoneDisplay}
               </a>
               <a
                 href={`mailto:${contact.email}`}
-                className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors"
+                className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors"
               >
                 {contact.email}
               </a>
-              <span className="font-body text-[14px] md:text-[15px] text-ivory/85">
+              <span className="font-body text-[14px] md:text-[15px] text-ivory">
                 Bangalore, India.
               </span>
             </div>
 
             {/* Column 3 — Read */}
             <div className="flex flex-col gap-3 items-center">
-              <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/50 mb-2">
+              <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/70 mb-2">
                 Read
               </p>
-              <Link href="/work" className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors">Work</Link>
-              <Link href="/studio" className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors">Studio</Link>
-              <Link href="/approach" className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors">Approach</Link>
-              <Link href="/contact" className="font-body text-[14px] md:text-[15px] text-ivory/85 hover:text-terracotta transition-colors">Contact</Link>
+              <Link href="/work" className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors">Work</Link>
+              <Link href="/studio" className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors">Studio</Link>
+              <Link href="/approach" className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors">Approach</Link>
+              <Link href="/contact" className="font-body text-[14px] md:text-[15px] text-ivory hover:text-terracotta transition-colors">Contact</Link>
             </div>
           </div>
         </div>
@@ -128,7 +120,7 @@ export default function Footer() {
       {/* BOTTOM STRIP */}
       {/* ============================== */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 pb-8">
-        <div className="pt-6 border-t border-ivory/12 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-10 text-center font-body text-[10px] md:text-[11px] uppercase tracking-[0.14em] text-ivory/45">
+        <div className="pt-6 border-t border-ivory/20 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-10 text-center font-body text-[10px] md:text-[11px] uppercase tracking-[0.14em] text-ivory/60">
           <div>© 2026 Studio Spetia. A studio of the Spetia parent practice.</div>
           <div>Trademark filing pending.</div>
         </div>

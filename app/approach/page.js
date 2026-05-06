@@ -61,10 +61,12 @@ export default function ApproachPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* Editorial hero */}
+      {/* Editorial hero — section grows with content; inner wrapper carries
+          `min-h-[80svh]` for viewport-fill on normal screens and
+          `pt-[120px] md:pt-[160px]` to clear the fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full h-[80svh] min-h-[520px] overflow-hidden bg-ink"
+        className="relative w-full overflow-hidden bg-ink"
       >
         <div
           className="absolute inset-0 hero-scrim"
@@ -72,15 +74,16 @@ export default function ApproachPage() {
           style={{
             backgroundColor: '#1A1A1A',
             backgroundImage:
-              'radial-gradient(ellipse at 25% 70%, rgba(154, 74, 46, 0.12) 0%, transparent 60%)',
+              'radial-gradient(ellipse at 25% 70%, rgba(154, 74, 46, 0.25) 0%, transparent 65%)',
           }}
         />
         <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #2</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">approach-hero.jpg</p>
-          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">16:9 · 2880×1620</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 16:9 full-bleed</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 min source</p>
         </div>
-        <div className="relative z-10 h-full container-wide flex flex-col justify-end pb-24 md:pb-32">
+        <div className="relative z-10 min-h-[80svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
@@ -249,7 +252,7 @@ export default function ApproachPage() {
                   </p>
                 </div>
              </div>
-             <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
+             <div className="aspect-[16/9] w-full relative bg-ivory">
                <Placeholder
                  filename="tier-atelier-hero.jpg"
                  aspect="16:9 · 2880×1620"
@@ -280,7 +283,7 @@ export default function ApproachPage() {
                   </p>
                 </div>
              </div>
-             <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
+             <div className="aspect-[16/9] w-full relative bg-ivory">
                <Placeholder
                  filename="tier-bespoke-hero.jpg"
                  aspect="16:9 · 2880×1620"
@@ -314,7 +317,7 @@ export default function ApproachPage() {
                   </p>
                 </div>
              </div>
-             <div className="aspect-[16/9] md:aspect-[4/5] w-full relative bg-ivory">
+             <div className="aspect-[16/9] w-full relative bg-ivory">
                <Placeholder
                  filename="tier-estate-hero.jpg"
                  aspect="16:9 · 2880×1620"
@@ -345,6 +348,9 @@ export default function ApproachPage() {
              </p>
              <p>
                For the Bespoke and Estate tiers, the palette opens up. Marble where it earns its place. Imported wood where the project asks for something the local market cannot supply. Custom-fabricated metalwork for stair railings, gates, light fixtures. The palette is always specific to the home — not a fixed list.
+             </p>
+             <p>
+               We design with Vaastu when the family asks. We do not impose it when they don&rsquo;t.
              </p>
           </div>
         </div>

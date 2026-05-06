@@ -1,5 +1,6 @@
 import WorkFilters from '../components/WorkFilters';
 import HeroHeadline from '../components/HeroHeadline';
+import CtaPrimary from '../components/CtaPrimary';
 import { projects } from '../lib/content';
 
 export const metadata = {
@@ -11,10 +12,12 @@ export const metadata = {
 export default function WorkPage() {
   return (
     <>
-      {/* Editorial hero */}
+      {/* Editorial hero — section grows with content; inner wrapper carries
+          `min-h-[80svh]` for viewport-fill on normal screens and
+          `pt-[120px] md:pt-[160px]` to clear the fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full h-[80svh] min-h-[520px] overflow-hidden bg-ink"
+        className="relative w-full overflow-hidden bg-ink"
       >
         {/* Hero photograph slot — replace with <Image src="/photos/work-page-hero.jpg" />.
             §10.4 (Tier 2 #7 alt): A signature Atelier exterior at golden hour, no people. */}
@@ -24,15 +27,16 @@ export default function WorkPage() {
           style={{
             backgroundColor: '#1A1A1A',
             backgroundImage:
-              'radial-gradient(ellipse at 80% 30%, rgba(199, 185, 161, 0.10) 0%, transparent 60%)',
+              'radial-gradient(ellipse at 80% 30%, rgba(154, 74, 46, 0.22) 0%, transparent 65%)',
           }}
         />
         <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #7</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">work-page-hero.jpg</p>
-          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">16:10 · 2880×1800</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 16:10 full-bleed</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1800 min source</p>
         </div>
-        <div className="relative z-10 h-full container-wide flex flex-col justify-end pb-24 md:pb-32">
+        <div className="relative z-10 min-h-[80svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}

@@ -71,7 +71,7 @@ export default function ContactForm() {
         <p className="font-body text-[16px] leading-[1.65] text-ink">
           We have your message. Sangeetha or Sathya will reply on WhatsApp within two working days. — Studio Spetia <span className="end-mark"></span>
         </p>
-        <p className="font-body text-[14px] leading-[1.65] text-ink-soft">
+        <p className="font-body text-[14px] leading-[1.65] text-ink/90">
           To make sure your details reach us, tap below to open WhatsApp with your message pre-filled. Just hit send.
         </p>
         <a
@@ -114,7 +114,7 @@ export default function ContactForm() {
           placeholder="Name *"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full bg-transparent border-b ${errorField === 'name' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink-quiet focus:outline-none focus:border-ink transition-colors rounded-none`}
+          className={`w-full bg-transparent border-b ${errorField === 'name' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink/60 focus:outline-none focus:border-ink transition-colors rounded-none`}
         />
       </div>
 
@@ -129,7 +129,7 @@ export default function ContactForm() {
           placeholder="Phone (with WhatsApp) *"
           value={formData.phone}
           onChange={handleChange}
-          className={`w-full bg-transparent border-b ${errorField === 'phone' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink-quiet focus:outline-none focus:border-ink transition-colors rounded-none`}
+          className={`w-full bg-transparent border-b ${errorField === 'phone' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink/60 focus:outline-none focus:border-ink transition-colors rounded-none`}
         />
       </div>
 
@@ -145,7 +145,7 @@ export default function ContactForm() {
           placeholder="Plot location and approximate size *"
           value={formData.plot}
           onChange={handleChange}
-          className={`w-full bg-transparent border-b ${errorField === 'plot' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink-quiet focus:outline-none focus:border-ink transition-colors rounded-none`}
+          className={`w-full bg-transparent border-b ${errorField === 'plot' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink/60 focus:outline-none focus:border-ink transition-colors rounded-none`}
         />
       </div>
 
@@ -159,7 +159,7 @@ export default function ContactForm() {
           placeholder="Message (optional)"
           value={formData.message}
           onChange={handleChange}
-          className={`w-full bg-transparent border-b ${errorField === 'message' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink-quiet focus:outline-none focus:border-ink transition-colors resize-none min-h-[80px] rounded-none`}
+          className={`w-full bg-transparent border-b ${errorField === 'message' ? 'border-terracotta text-terracotta' : 'border-ink/30 text-ink'} py-3 px-0 font-body text-[16px] placeholder:text-ink/60 focus:outline-none focus:border-ink transition-colors resize-none min-h-[80px] rounded-none`}
         />
       </div>
 
@@ -175,7 +175,7 @@ export default function ContactForm() {
         {status === 'submitting' ? 'SENDING...' : 'MESSAGE STUDIO SPETIA'}
       </button>
 
-      <p className="font-body text-[12px] text-ink-quiet text-center mt-2">
+      <p className="font-body text-[12px] text-ink/70 text-center mt-2">
         By messaging us, you agree to a short WhatsApp reply. We do not add you to mailing lists.
       </p>
     </form>

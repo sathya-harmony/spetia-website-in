@@ -214,17 +214,18 @@
     text-rendering: geometricPrecision;
   }
 
-  /* Eyebrow — Mier B Book, 13px, all caps, tracked +0.12em, ink-quiet (spec §8.2) */
+  /* Eyebrow — Mier B Book, 13px, all caps, tracked +0.12em.
+     Updated for vibrancy: Terracotta by default. */
   .eyebrow {
     font-family: var(--font-body), system-ui, sans-serif;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--ink-quiet);
-    font-weight: 400;
+    color: var(--hampi-terracotta);
+    font-weight: 500;
   }
   .eyebrow--light {
-    color: rgba(241, 236, 226, 0.6);
+    color: var(--mysore-stone);
   }
 
   /* Lede — large body intro paragraph under H1/Hero */
@@ -232,7 +233,7 @@
     font-family: var(--font-body), system-ui, sans-serif;
     font-size: clamp(1rem, 1.4vw, 1.125rem);
     line-height: 1.6;
-    color: var(--ink-soft);
+    color: var(--spetia-ink);
   }
 
   /* Body — default body copy, max ~65 chars per line (spec §8.2) */
@@ -240,7 +241,8 @@
     font-family: var(--font-body), system-ui, sans-serif;
     font-size: 1rem;
     line-height: 1.65;
-    color: var(--ink-soft);
+    color: var(--spetia-ink);
+    opacity: 0.9;
   }
 
   /* Caption — small meta line under cards (location · sqft · year · tier) */
@@ -249,7 +251,8 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.13em;
-    color: var(--ink-quiet);
+    color: var(--spetia-ink);
+    opacity: 0.75;
   }
 
   /* Italic terracotta accent link with arrow ("View all work →") — spec §9.1 */
@@ -431,8 +434,8 @@
     letter-spacing: 0.13em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--ink-soft);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+    color: var(--spetia-ink);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.4);
     padding-bottom: 8px;
     transition: color 240ms ease, border-color 240ms ease;
   }
@@ -441,12 +444,12 @@
     border-bottom-color: var(--hampi-terracotta);
   }
   .link-underline--light {
-    color: rgba(241, 236, 226, 0.85);
-    border-bottom-color: rgba(241, 236, 226, 0.35);
+    color: var(--mysore-ivory);
+    border-bottom-color: rgba(241, 236, 226, 0.6);
   }
   .link-underline--light:hover {
-    color: var(--mysore-ivory);
-    border-bottom-color: var(--mysore-ivory);
+    color: var(--hampi-terracotta);
+    border-bottom-color: var(--hampi-terracotta);
   }
 
   /* Section vertical rhythm — Omai spacing, ~120/180/240 px */
@@ -467,7 +470,7 @@
       rgba(26, 26, 26, 0.30) 0%,
       rgba(26, 26, 26, 0.10) 30%,
       rgba(26, 26, 26, 0.10) 50%,
-      rgba(26, 26, 26, 0.55) 100%
+      rgba(26, 26, 26, 0.70) 100%
     );
     pointer-events: none;
   }

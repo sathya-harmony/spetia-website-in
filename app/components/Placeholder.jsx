@@ -18,6 +18,10 @@ export default function Placeholder({
   description,
   className = "aspect-[4/5]",
 }) {
+  const [frameLabel, uploadLabel] = aspect
+    ? aspect.split('·').map((part) => part.trim())
+    : [];
+
   // Backwards-compatible single-text mode
   if (text && !filename) {
     return (
@@ -45,9 +49,14 @@ export default function Placeholder({
         <span className="font-display italic text-[clamp(1.05rem,1.6vw,1.35rem)] leading-[1.25] text-ink mb-4">
           {filename}
         </span>
-        {aspect && (
-          <span className="font-body text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-5">
-            Aspect {aspect}
+        {frameLabel && (
+          <span className="font-body text-[10px] uppercase tracking-[0.18em] text-ink/60 mb-2">
+            Shot ratio {frameLabel}
+          </span>
+        )}
+        {uploadLabel && (
+          <span className="font-body text-[10px] uppercase tracking-[0.18em] text-ink/60 mb-5">
+            Export {uploadLabel} min source
           </span>
         )}
         <span className="block w-8 h-px bg-ink/30 mb-5" />

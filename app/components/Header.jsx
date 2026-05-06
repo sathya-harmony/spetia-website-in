@@ -80,7 +80,8 @@ export default function Header() {
                 href={getWhatsappHref(currentPage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-[12px] md:text-[13px] uppercase tracking-[0.13em] hover:opacity-70 transition-opacity"
+                className="font-body text-[12px] md:text-[13px] uppercase tracking-[0.13em] font-medium hover:opacity-70 transition-opacity"
+                style={{ color: 'var(--hampi-terracotta)' }}
               >
                 <span className="hidden md:inline">MESSAGE STUDIO SPETIA</span>
                 <span className="md:hidden">ENQUIRE</span>
@@ -187,7 +188,7 @@ export default function Header() {
 
             <div className="h-px bg-ink/10 my-12" />
 
-            <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ink-quiet mb-4">
+            <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ink/70 mb-4">
               Reach us
             </p>
             <ul className="flex flex-col gap-3">
@@ -196,7 +197,7 @@ export default function Header() {
                   href={`https://wa.me/${contact.phoneDigits}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-[14px] text-ink-soft hover:text-terracotta transition-colors"
+                  className="font-body text-[14px] text-ink hover:text-terracotta transition-colors"
                 >
                   WhatsApp {contact.phoneDisplay}
                 </a>
@@ -204,7 +205,7 @@ export default function Header() {
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="font-body text-[14px] text-ink-soft hover:text-terracotta transition-colors"
+                  className="font-body text-[14px] text-ink hover:text-terracotta transition-colors"
                 >
                   {contact.email}
                 </a>

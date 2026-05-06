@@ -16,14 +16,17 @@ export default function ContactPage() {
         <h1 className="type-hero text-ink mb-8 text-center max-w-[18ch]">
           Tell us about your plot.
         </h1>
-        <p className="type-lede text-ink/85 text-center max-w-[480px] mb-16">
+        <p className="type-lede text-ink/85 text-center max-w-[480px] mb-4">
           A short message is enough. Sangeetha or Sathya will reply on WhatsApp within two working days, in Bangalore time.
+        </p>
+        <p className="font-body text-[13px] leading-[1.6] text-ink/70 text-center max-w-[480px] mb-16">
+          Sangeetha and Sathya reply in English, Kannada, or Hindi.
         </p>
 
         {/* Path 1: WhatsApp (primary) */}
         <div className="w-full flex flex-col items-center mb-24">
           <CtaPrimary page="contact" className="w-full md:max-w-[320px] justify-center" />
-          <p className="font-body text-[13px] text-ink/65 mt-4 text-center">
+          <p className="font-body text-[13px] text-ink/80 mt-4 text-center">
             Opens WhatsApp · pre-filled with a starter message
           </p>
         </div>

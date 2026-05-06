@@ -35,10 +35,13 @@ export default function StudioPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchemaSangeetha) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchemaSathya) }} />
 
-      {/* HERO — Sangeetha + Sathya on-site, full-bleed */}
+      {/* HERO — Sangeetha + Sathya on-site, full-bleed.
+          Inner wrapper carries `min-h-[100svh]` so the hero is at least
+          viewport-tall on normal screens but grows on short viewports;
+          `pt-[120px] md:pt-[160px]` keeps the eyebrow below the fixed header. */}
       <section
         data-header-theme="dark"
-        className="relative w-full h-[100svh] min-h-[600px] overflow-hidden bg-ink"
+        className="relative w-full overflow-hidden bg-ink"
       >
         {/* Photograph slot — replace with <Image src="/photos/studio-hero-onsite.jpg" />.
             §10.4 #2 — Sangeetha and Sathya at a Bangalore site mid-construction.
@@ -49,15 +52,16 @@ export default function StudioPage() {
           style={{
             backgroundColor: '#1A1A1A',
             backgroundImage:
-              'radial-gradient(ellipse at 30% 20%, rgba(63, 74, 58, 0.14) 0%, transparent 60%)',
+              'radial-gradient(ellipse at 30% 20%, rgba(63, 74, 58, 0.25) 0%, transparent 65%)',
           }}
         />
         <div className="absolute top-[120px] md:top-[140px] right-5 md:right-10 z-20 text-right pointer-events-none">
           <p className="font-body text-[10px] uppercase tracking-[0.18em] text-ivory/55 mb-1">Photograph · §10.4 #2</p>
           <p className="font-display text-[14px] md:text-[15px] text-ivory/80">studio-hero-onsite.jpg</p>
-          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">16:9 full-bleed</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/55">Shot ratio 16:9 full-bleed</p>
+          <p className="font-body text-[10px] uppercase tracking-[0.14em] text-ivory/45">Export 2880×1620 min source</p>
         </div>
-        <div className="relative z-10 h-full container-wide flex flex-col justify-end pb-32 md:pb-40">
+        <div className="relative z-10 min-h-[100svh] container-wide flex flex-col justify-end pt-[120px] md:pt-[160px] pb-24 md:pb-32">
           <p
             className="eyebrow eyebrow--light mb-8"
             style={{ animation: 'hero-word-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both' }}
